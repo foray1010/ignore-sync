@@ -5,13 +5,15 @@ const ignore = require('ignore')
 const path = require('path')
 const R = require('ramda')
 
+const {composeAndPromiseAll, syncToAsync} = require('./utils/ramdaHelper')
+
 const filterIgnoreSyncFiles = R.compose(R.test(/\..+ignore-sync$/), path.basename)
 
 const getIgnorePattern = async (projectRoot) => {
   const gitingorePath = path.join(projectRoot, '.gitignore')
   try {
     const gitignore = await fs.readFile(gitingorePath)
-    return gitignore.toString()
+    return String(gitignore)
   } catch (err) {
     return null
   }
@@ -28,10 +30,7 @@ const getIsIgnored = async (projectRoot) => {
 }
 
 const scanDir = (relativeDir, projectRoot, isIgnored) => {
-  const syncToAsync = (fn) => (...args) => Promise.resolve(fn(...args))
-
-  const getRelativePaths = R.compose(
-    R.bind(Promise.all, Promise),
+  const getRelativePaths = composeAndPromiseAll(
     R.map(async (relativePath) => {
       const stats = await fs.stat(path.join(projectRoot, relativePath))
       return relativePath + (stats.isDirectory() ? '/' : '')
@@ -39,8 +38,7 @@ const scanDir = (relativeDir, projectRoot, isIgnored) => {
     R.map((file) => path.join(relativeDir, file))
   )
 
-  const recursiveScan = R.compose(
-    R.bind(Promise.all, Promise),
+  const recursiveScan = composeAndPromiseAll(
     R.map(
       R.ifElse(
         R.test(/\/$/),
