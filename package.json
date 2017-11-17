@@ -1,0 +1,28 @@
+{
+  "name": "ignore-sync",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=8"
+  },
+  "description": "a CLI tool to build and sync .*ignore files across files and repositories",
+  "license": "MIT",
+  "author": "foray1010",
+  "repository": "https://github.com/foray1010/ignore-sync",
+  "main": "src/index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": ["prettier-eslint --write", "eslint --fix", "git add"],
+    "*.json": ["prettier-eslint --write", "git add"]
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^4.8.0",
+    "eslint-config-foray1010": "^6.2.0",
+    "husky": "^0.14.0",
+    "lint-staged": "^5.0.0",
+    "prettier-eslint-cli": "^4.3.2"
+  }
+}
