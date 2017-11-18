@@ -5,7 +5,7 @@ const ignore = require('ignore')
 const path = require('path')
 const R = require('ramda')
 
-const {composeAndPromiseAll, syncToAsync} = require('./utils/ramdaHelper')
+const {composeAndPromiseAll} = require('./utils/ramdaHelper')
 
 const filterIgnoreSyncFiles = R.compose(R.test(/\..+ignore-sync$/), path.basename)
 
@@ -49,13 +49,9 @@ const scanDir = (relativeDir, projectRoot, isIgnored) => {
   )
 
   const dirPath = path.resolve(projectRoot, relativeDir)
-  return R.composeP(
-    syncToAsync(R.flatten),
-    recursiveScan,
-    syncToAsync(R.reject(isIgnored)),
-    getRelativePaths,
-    fs.readdir
-  )(dirPath)
+  return R.composeP(R.flatten, recursiveScan, R.reject(isIgnored), getRelativePaths, fs.readdir)(
+    dirPath
+  )
 }
 
 module.exports = async (projectRoot) => {
