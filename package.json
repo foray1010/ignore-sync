@@ -18,6 +18,7 @@
     "*.json": ["prettier-eslint --write", "git add"]
   },
   "dependencies": {
+    "axios": "^0.17.1",
     "fs-extra": "^4.0.2",
     "ignore": "^3.3.7",
     "ramda": "^0.25.0"
