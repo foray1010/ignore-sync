@@ -6,6 +6,7 @@ const R = require('ramda')
 const decodeIgnoreSyncFile = require('./decodeIgnoreSyncFile')
 const generateIgnoreFile = require('./generateIgnoreFile')
 const getIgnoreSyncFiles = require('./getIgnoreSyncFiles')
+const writeIgnoreFile = require('./writeIgnoreFile')
 const {composeAndPromiseAll, syncToAsync} = require('./utils/ramdaHelper')
 
 module.exports = async () => {
@@ -25,4 +26,8 @@ module.exports = async () => {
     R.map((ignoreSyncData) => generateIgnoreFile(ignoreSyncData, projectRoot))
   )(ignoreSyncDataList)
   console.log(JSON.stringify(ignoreFiles, null, 2))
+
+  await composeAndPromiseAll(
+    R.map(([relativePath, ignoreFile]) => writeIgnoreFile(relativePath, projectRoot, ignoreFile))
+  )(R.zip(ignoreSyncFilePaths, ignoreFiles))
 }
