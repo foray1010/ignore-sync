@@ -7,7 +7,7 @@ const R = require('ramda')
 
 const {composeAndPromiseAll} = require('./utils/ramdaHelper')
 
-const filterIgnoreSyncFiles = R.compose(R.test(/\..+ignore-sync$/), path.basename)
+const isIgnoreSyncFile = R.compose(R.test(/\..+ignore-sync$/), path.basename)
 
 const getIgnorePattern = async (projectRoot) => {
   const gitingorePath = path.join(projectRoot, '.gitignore')
@@ -59,5 +59,5 @@ module.exports = async (projectRoot) => {
 
   const relativePaths = await scanDir('.', projectRoot, isIgnored)
 
-  return R.filter(filterIgnoreSyncFiles, relativePaths)
+  return R.filter(isIgnoreSyncFile, relativePaths)
 }
