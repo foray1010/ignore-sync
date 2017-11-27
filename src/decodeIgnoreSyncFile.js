@@ -2,6 +2,9 @@
 
 const R = require('ramda')
 
+const removeComment = R.compose(R.nth(0), R.split('#'))
+const trimSpaces = R.compose(R.replace(/\s+/, ' '), R.trim)
+
 module.exports = (str) =>
   R.compose(
     R.reduce((acc, line) => {
@@ -21,5 +24,7 @@ module.exports = (str) =>
       }
       return acc
     }, []),
+    R.filter(R.identity), // remove empty lines
+    R.map(R.compose(trimSpaces, removeComment)),
     R.split('\n')
   )(str)
