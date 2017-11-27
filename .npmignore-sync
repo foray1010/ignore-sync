@@ -1,2 +1,6 @@
 [local]
 .gitignore
+
+[inline]
+__mocks__/
+*.test.js
