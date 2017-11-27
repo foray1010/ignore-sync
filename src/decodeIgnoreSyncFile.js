@@ -5,7 +5,7 @@ const R = require('ramda')
 module.exports = (str) =>
   R.compose(
     R.reduce((acc, line) => {
-      if (/^\[(.*)\]/.test(line)) {
+      if (/^\[(.*)\]$/.test(line)) {
         return [
           ...acc,
           {
