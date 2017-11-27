@@ -7,15 +7,15 @@ const R = require('ramda')
 const github = require('./utils/github')
 const {composeAndPromiseAll} = require('./utils/ramdaHelper')
 
-const joinLines = R.join('\n')
+const joinLinesWithEOF = R.compose(R.flip(R.concat)('\n'), R.trim, R.join('\n'))
 
-const inlineSourceFetcher = R.compose(joinLines, R.prop('data'))
+const inlineSourceFetcher = R.compose(joinLinesWithEOF, R.prop('data'))
 const githubSourceFetcher = async (block) => {
   const [owner, repo] = block.source.split('/')
   const files = await composeAndPromiseAll(
     R.map((relativePath) => github.getContentFile(owner, repo, relativePath))
   )(block.data)
-  return joinLines(files)
+  return joinLinesWithEOF(files)
 }
 const localSourceFetcher = async (block, projectRoot) => {
   const fileBuffers = await composeAndPromiseAll(
@@ -23,7 +23,7 @@ const localSourceFetcher = async (block, projectRoot) => {
     R.map((relativePath) => path.join(projectRoot, relativePath))
   )(block.data)
   const files = R.map(String, fileBuffers)
-  return joinLines(files)
+  return joinLinesWithEOF(files)
 }
 
 module.exports = async (ignoreSyncData, projectRoot) => {
@@ -45,5 +45,5 @@ module.exports = async (ignoreSyncData, projectRoot) => {
       ])
     )
   )(ignoreSyncData)
-  return joinLines(blocks)
+  return joinLinesWithEOF(blocks)
 }
