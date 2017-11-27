@@ -18,11 +18,9 @@ module.exports = (str) =>
         ]
       }
 
-      const lastBlock = R.last(acc)
-      if (lastBlock) {
-        lastBlock.data = [...lastBlock.data, line]
-      }
-      return acc
+      if (!acc.length) throw new Error('source `[]` not found before ignore pattern is found')
+
+      return [...R.init(acc), R.over(R.lensProp('data'), R.append(line), R.last(acc))]
     }, []),
     R.filter(R.identity), // remove empty lines
     R.map(R.compose(trimSpaces, removeComment)),
