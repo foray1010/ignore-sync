@@ -10,19 +10,19 @@ const {composeAndPromiseAll} = require('./utils/ramdaHelper')
 const joinLines = R.join('\n')
 
 const inlineSourceFetcher = R.compose(joinLines, R.prop('data'))
+const githubSourceFetcher = async (block) => {
+  const [owner, repo] = block.source.split('/')
+  const files = await composeAndPromiseAll(
+    R.map((relativePath) => github.getContentFile(owner, repo, relativePath))
+  )(block.data)
+  return joinLines(files)
+}
 const localSourceFetcher = async (block, projectRoot) => {
   const fileBuffers = await composeAndPromiseAll(
     R.map(fs.readFile),
     R.map((relativePath) => path.join(projectRoot, relativePath))
   )(block.data)
   const files = R.map(String, fileBuffers)
-  return joinLines(files)
-}
-const githubSourceFetcher = async (block) => {
-  const [owner, repo] = block.source.split('/')
-  const files = await composeAndPromiseAll(
-    R.map((relativePath) => github.getContentFile(owner, repo, relativePath))
-  )(block.data)
   return joinLines(files)
 }
 
@@ -38,8 +38,8 @@ module.exports = async (ignoreSyncData, projectRoot) => {
         [sourceIs(isGithubSource), githubSourceFetcher],
         [
           R.T,
-          (ignoreSyncBlock) => {
-            throw new Error(`unknown source: ${ignoreSyncBlock.source}`)
+          (block) => {
+            throw new Error(`unknown source: ${block.source}`)
           }
         ]
       ])
