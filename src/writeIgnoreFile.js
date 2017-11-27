@@ -12,6 +12,6 @@ module.exports = async (relativePath, projectRoot, fileStr) => {
     renameIgnoreFile
   )(relativePath)
 
-  await fs.unlink(ignoreFilePath).catch(R.F)
+  await fs.unlink(ignoreFilePath).catch(() => {})
   await fs.writeFile(ignoreFilePath, fileStr)
 }
