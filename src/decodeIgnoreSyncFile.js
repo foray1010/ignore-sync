@@ -2,10 +2,9 @@
 
 const R = require('ramda')
 
-const removeComment = R.compose(R.nth(0), R.split('#'))
-const trimSpaces = R.compose(R.replace(/\s+/, ' '), R.trim)
+const cleanupIgnoreSyncFile = require('./cleanupIgnoreSyncFile')
 
-module.exports = (str) =>
+module.exports = (ignoreSyncFile) =>
   R.compose(
     R.reduce((acc, line) => {
       if (/^\[(.*)\]$/.test(line)) {
@@ -22,7 +21,6 @@ module.exports = (str) =>
 
       return [...R.init(acc), R.over(R.lensProp('data'), R.append(line), R.last(acc))]
     }, []),
-    R.filter(R.identity), // remove empty lines
-    R.map(R.compose(trimSpaces, removeComment)),
-    R.split('\n')
-  )(str)
+    R.split('\n'),
+    cleanupIgnoreSyncFile
+  )(ignoreSyncFile)
