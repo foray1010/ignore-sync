@@ -8,8 +8,8 @@ const R = require('ramda')
 const isIgnoreSyncFile = require('./isIgnoreSyncFile')
 const {composeAndPromiseAll} = require('./utils/ramdaHelper')
 
-const getIgnorePattern = async (projectRoot) => {
-  const gitingorePath = path.join(projectRoot, '.gitignore')
+const getIgnorePattern = async (dir) => {
+  const gitingorePath = path.join(dir, '.gitignore')
   try {
     const gitignore = await fs.readFile(gitingorePath)
     return String(gitignore)
