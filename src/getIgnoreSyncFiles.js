@@ -6,7 +6,7 @@ const path = require('path')
 const R = require('ramda')
 
 const isIgnoreSyncFile = require('./isIgnoreSyncFile')
-const {composeAndPromiseAll} = require('./utils/ramdaHelper')
+const {dynamicComposeP, promiseMap} = require('./utils/ramdaHelper')
 
 const getIgnorePattern = async (dir) => {
   const gitingorePath = path.join(dir, '.gitignore')
@@ -29,21 +29,19 @@ const getIsIgnored = async (projectRoot) => {
 }
 
 const scanDir = (relativeDir, projectRoot, isIgnored) => {
-  const getRelativePaths = composeAndPromiseAll(
-    R.map(async (relativePath) => {
+  const getRelativePaths = dynamicComposeP(
+    promiseMap(async (relativePath) => {
       const stats = await fs.stat(path.join(projectRoot, relativePath))
       return relativePath + (stats.isDirectory() ? '/' : '')
     }),
     R.map((file) => path.join(relativeDir, file))
   )
 
-  const recursiveScan = composeAndPromiseAll(
-    R.map(
-      R.ifElse(
-        R.test(/\/$/),
-        (relativePath) => scanDir(relativePath, projectRoot, isIgnored),
-        R.identity
-      )
+  const recursiveScan = promiseMap(
+    R.ifElse(
+      R.test(/\/$/),
+      (relativePath) => scanDir(relativePath, projectRoot, isIgnored),
+      R.identity
     )
   )
 

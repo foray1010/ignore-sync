@@ -2,8 +2,8 @@
 
 const R = require('ramda')
 
-const composeAndPromiseAll = (...args) => R.compose(R.bind(Promise.all, Promise), ...args)
-exports.composeAndPromiseAll = composeAndPromiseAll
+const promiseMap = R.curry((fn, array) => R.compose(R.bind(Promise.all, Promise), R.map(fn))(array))
+exports.promiseMap = promiseMap
 
 // can compose sync and async functions
 const dynamicComposeP = (...args) => R.composeP(...args, R.bind(Promise.resolve, Promise))
