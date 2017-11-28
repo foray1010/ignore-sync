@@ -7,7 +7,7 @@ const R = require('ramda')
 
 const {composeAndPromiseAll} = require('./utils/ramdaHelper')
 
-const isIgnoreSyncFile = R.compose(R.test(/\..+ignore-sync$/), path.basename)
+const isIgnoreSyncFile = R.compose(R.test(/.+ignore-sync$/), path.basename)
 
 const getIgnorePattern = async (projectRoot) => {
   const gitingorePath = path.join(projectRoot, '.gitignore')
