@@ -4,7 +4,7 @@ const R = require('ramda')
 
 const removeComment = R.compose(R.nth(0), R.split('#'))
 const removeEmptyLines = R.reject((line) => line === '')
-const trimSpaces = R.compose(R.replace(/\s+/, ' '), R.trim)
+const trimSpaces = R.compose(R.replace(/\s+/g, ' '), R.trim)
 
 module.exports = R.compose(
   R.join('\n'),
