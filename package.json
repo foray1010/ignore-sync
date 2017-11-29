@@ -11,7 +11,8 @@
   "bin": "src/bin.js",
   "scripts": {
     "lint": "eslint .",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "test": "cross-env NODE_ENV=test jest --config .jest.config.json"
   },
   "lint-staged": {
     "*.js": ["prettier-eslint --write", "eslint --fix", "git add"],
@@ -25,9 +26,11 @@
     "ramda": "^0.25.0"
   },
   "devDependencies": {
+    "cross-env": "^5.1.1",
     "eslint": "^4.8.0",
     "eslint-config-foray1010": "^6.2.0",
     "husky": "^0.14.0",
+    "jest": "^21.2.1",
     "lint-staged": "^5.0.0",
     "prettier-eslint-cli": "^4.3.2"
   }
