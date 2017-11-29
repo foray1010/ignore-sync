@@ -8,7 +8,7 @@
   "license": "MIT",
   "author": "foray1010",
   "repository": "https://github.com/foray1010/ignore-sync",
-  "bin": "src/index.js",
+  "bin": "src/bin.js",
   "scripts": {
     "lint": "eslint .",
     "precommit": "lint-staged"
