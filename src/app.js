@@ -18,8 +18,10 @@ module.exports = async () => {
   const ignoreSyncFiles = await readFilesFromProjectRoot(ignoreSyncFilePaths, projectRoot)
   console.log(JSON.stringify(ignoreSyncFiles, null, 2))
 
-  const ignoreFiles = await promiseMap((ignoreSyncFile) =>
-    generateIgnoreFile(ignoreSyncFile, projectRoot))(ignoreSyncFiles)
+  const ignoreFiles = await promiseMap(
+    (ignoreSyncFile) => generateIgnoreFile(ignoreSyncFile, projectRoot),
+    ignoreSyncFiles
+  )
   console.log(JSON.stringify(ignoreFiles, null, 2))
 
   await dynamicComposeP(
