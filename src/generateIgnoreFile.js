@@ -1,11 +1,10 @@
 'use strict'
 
-const fs = require('fs-extra')
-const path = require('path')
 const R = require('ramda')
 
 const decodeIgnoreSyncFile = require('./decodeIgnoreSyncFile')
 const github = require('./utils/github')
+const readFilesFromProjectRoot = require('./readFilesFromProjectRoot')
 const {dynamicComposeP, promiseMap} = require('./utils/ramdaHelper')
 
 const joinLinesWithEOF = R.compose(R.flip(R.concat)('\n'), R.trim, R.join('\n'))
@@ -20,11 +19,7 @@ const githubSourceFetcher = async (block) => {
   return joinLinesWithEOF(files)
 }
 const localSourceFetcher = async (block, projectRoot) => {
-  const files = await dynamicComposeP(
-    R.map(String),
-    promiseMap(fs.readFile),
-    R.map((relativePath) => path.join(projectRoot, relativePath))
-  )(block.data)
+  const files = await readFilesFromProjectRoot(block.data, projectRoot)
   return joinLinesWithEOF(files)
 }
 
