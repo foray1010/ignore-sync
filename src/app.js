@@ -1,6 +1,8 @@
 'use strict'
 
 const fs = require('fs-extra')
+const path = require('path')
+const pkgDir = require('pkg-dir')
 const R = require('ramda')
 
 const generateIgnoreFile = require('./generateIgnoreFile')
@@ -9,14 +11,16 @@ const writeIgnoreFile = require('./writeIgnoreFile')
 const {dynamicComposeP, promiseMap} = require('./utils/ramdaHelper')
 
 module.exports = async () => {
-  const projectRoot = process.cwd()
+  const projectRoot = await pkgDir()
 
   const ignoreSyncFilePaths = await getIgnoreSyncFiles(projectRoot)
   console.log(ignoreSyncFilePaths)
 
-  const ignoreSyncFiles = await R.composeP(R.map(String), promiseMap(fs.readFile))(
-    ignoreSyncFilePaths
-  )
+  const ignoreSyncFiles = await dynamicComposeP(
+    R.map(String),
+    promiseMap(fs.readFile),
+    R.map((relativePath) => path.join(projectRoot, relativePath))
+  )(ignoreSyncFilePaths)
   console.log(JSON.stringify(ignoreSyncFiles, null, 2))
 
   const ignoreFiles = await promiseMap((ignoreSyncFile) =>
