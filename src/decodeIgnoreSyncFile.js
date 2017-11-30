@@ -19,7 +19,10 @@ module.exports = (ignoreSyncFile) =>
 
       if (!acc.length) throw new Error('source `[]` not found before ignore pattern is found')
 
-      return [...R.init(acc), R.over(R.lensProp('data'), R.append(line), R.last(acc))]
+      return R.converge(R.append, [
+        R.compose(R.over(R.lensProp('data'), R.append(line)), R.last),
+        R.init
+      ])(acc)
     }, []),
     R.split('\n'),
     cleanupIgnoreSyncFile
