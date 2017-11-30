@@ -4,7 +4,7 @@ const R = require('ramda')
 
 const decodeIgnoreSyncFile = require('./decodeIgnoreSyncFile')
 const github = require('./utils/github')
-const readFilesFromProjectRoot = require('./readFilesFromProjectRoot')
+const readFileFromProjectRoot = require('./readFileFromProjectRoot')
 const {dynamicComposeP, promiseMap} = require('./utils/ramdaHelper')
 
 const joinLinesWithEOF = R.compose(R.flip(R.concat)('\n'), R.trim, R.join('\n'))
@@ -19,7 +19,7 @@ const githubSourceFetcher = async (block) => {
   return joinLinesWithEOF(files)
 }
 const localSourceFetcher = async (block, projectRoot) => {
-  const files = await readFilesFromProjectRoot(block.data, projectRoot)
+  const files = await promiseMap(readFileFromProjectRoot(projectRoot), block.data)
   return joinLinesWithEOF(files)
 }
 

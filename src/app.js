@@ -5,7 +5,7 @@ const R = require('ramda')
 
 const generateIgnoreFile = require('./generateIgnoreFile')
 const getIgnoreSyncFiles = require('./getIgnoreSyncFiles')
-const readFilesFromProjectRoot = require('./readFilesFromProjectRoot')
+const readFileFromProjectRoot = require('./readFileFromProjectRoot')
 const writeIgnoreFile = require('./writeIgnoreFile')
 const {dynamicComposeP, promiseMap} = require('./utils/ramdaHelper')
 
@@ -15,7 +15,10 @@ module.exports = async () => {
   const ignoreSyncFilePaths = await getIgnoreSyncFiles(projectRoot)
   console.log(ignoreSyncFilePaths)
 
-  const ignoreSyncFiles = await readFilesFromProjectRoot(ignoreSyncFilePaths, projectRoot)
+  const ignoreSyncFiles = await promiseMap(
+    readFileFromProjectRoot(projectRoot),
+    ignoreSyncFilePaths
+  )
   console.log(JSON.stringify(ignoreSyncFiles, null, 2))
 
   const ignoreFiles = await promiseMap(
