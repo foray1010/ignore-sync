@@ -18,6 +18,17 @@ describe('decodeIgnoreSyncFile', () => {
     ])
   })
 
+  test('should throw error if no source', () => {
+    const error = new Error('source `[]` not found before ignore pattern is found')
+    expect(() => decodeIgnoreSyncFile('pattern')).toThrow(error)
+    expect(() => decodeIgnoreSyncFile('pattern\n[inline]\npattern')).toThrow(error)
+
+    // allow empty source
+    expect(() => decodeIgnoreSyncFile('[]\npattern')).not.toThrow(error)
+    expect(() => decodeIgnoreSyncFile('[inline]\npattern\n[]\npattern')).not.toThrow(error)
+    expect(() => decodeIgnoreSyncFile('[]\npattern\n[inline]\npattern')).not.toThrow(error)
+  })
+
   test('should ignore comments', () => {
     expect(
       decodeIgnoreSyncFile('[inline] # comment\n# comment2\npattern\npattern2 # comment 3')
