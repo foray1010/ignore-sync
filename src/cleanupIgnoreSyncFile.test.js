@@ -12,6 +12,8 @@ describe('cleanupIgnoreSyncFile', () => {
   })
 
   test('should trim spaces', () => {
-    expect(cleanupIgnoreSyncFile('   p   a   t   t   e   r   n   ')).toBe('p a t t e r n')
+    expect(cleanupIgnoreSyncFile('   p   a   t   t   e   r   n   ')).toBe(
+      'p   a   t   t   e   r   n'
+    )
   })
 })

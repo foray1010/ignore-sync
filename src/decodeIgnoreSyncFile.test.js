@@ -26,7 +26,7 @@ describe('decodeIgnoreSyncFile', () => {
 
   test('should ignore spaces', () => {
     expect(decodeIgnoreSyncFile('   [   inline   ]   \n   pattern   \n   pattern2   \n\n')).toEqual(
-      [{source: ' inline ', data: ['pattern', 'pattern2']}]
+      [{source: '   inline   ', data: ['pattern', 'pattern2']}]
     )
   })
 })
