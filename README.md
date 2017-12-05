@@ -53,5 +53,6 @@ yarn.lock
     - `[$username/$repo]`
       - github file paths under this tag will be read and the content of these files will be copied to generated ignore file
       - file paths are relative to the root of the github repository
+      - recommend using ignore patterns from [[github/gitignore]](https://github.com/github/gitignore)
 
 3. `npm run ignore-sync`
