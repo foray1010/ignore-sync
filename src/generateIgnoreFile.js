@@ -7,7 +7,9 @@ const github = require('./utils/github')
 const readFileFromProjectRoot = require('./readFileFromProjectRoot')
 const {dynamicComposeP, promiseMap} = require('./utils/ramdaHelper')
 
+const isGithubSource = R.test(/^(\w+\/\w+)$/i)
 const joinLinesWithEOF = R.compose(R.flip(R.concat)('\n'), R.trim, R.join('\n'))
+const sourceIs = (...args) => R.compose(...args, R.prop('source'))
 
 const inlineSourceFetcher = R.compose(joinLinesWithEOF, R.prop('data'))
 const githubSourceFetcher = async (block) => {
@@ -24,9 +26,6 @@ const localSourceFetcher = async (block, projectRoot) => {
 }
 
 module.exports = (ignoreSyncFile, projectRoot) => {
-  const isGithubSource = R.test(/^(\w+\/\w+)$/i)
-  const sourceIs = (...args) => R.pipe(R.prop('source'), ...args)
-
   const fetchIgnorePatternsBySource = promiseMap(
     R.cond([
       [sourceIs(R.equals('inline')), inlineSourceFetcher],
