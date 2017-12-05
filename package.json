@@ -5,6 +5,15 @@
     "node": ">=7.6"
   },
   "description": "a CLI tool to build and sync *ignore files across files and repositories",
+  "keywords": [
+    ".eslintignore",
+    ".gitignore",
+    ".npmignore",
+    "eslintignore",
+    "gitignore",
+    "ignore",
+    "npmignore"
+  ],
   "license": "MIT",
   "author": "foray1010",
   "repository": "https://github.com/foray1010/ignore-sync",
