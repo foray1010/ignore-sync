@@ -123,4 +123,6 @@ $RECYCLE.BIN/
 *.lnk
 
 __mocks__/
+.*
 *.test.js
+yarn.lock

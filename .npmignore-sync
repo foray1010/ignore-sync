@@ -1,6 +1,11 @@
-[local]
-.gitignore
+[github/gitignore]
+Node.gitignore
+Global/macOS.gitignore
+Global/Linux.gitignore
+Global/Windows.gitignore
 
 [inline]
 __mocks__/
+.*
 *.test.js
+yarn.lock
