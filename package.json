@@ -12,7 +12,12 @@
   "scripts": {
     "lint": "eslint .",
     "precommit": "lint-staged && yarn test",
-    "test": "cross-env NODE_ENV=test jest --config .jest.config.json"
+    "test": "cross-env NODE_ENV=test jest"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": ["**/*.js", "!**/coverage/**", "!**/node_modules/**"],
+    "coverageReporters": ["lcov", "text-summary"]
   },
   "lint-staged": {
     "*.js": ["prettier-eslint --write", "eslint --fix", "git add"],
