@@ -3,8 +3,8 @@
 const isIgnoreSyncFile = require('./isIgnoreSyncFile')
 
 describe('isIgnoreSyncFile', () => {
-  test('return true when filename end with ignore-sync', () => {
-    expect(isIgnoreSyncFile('ignore-sync')).toBe(true)
+  test('return true when filename end with .+ignore-sync', () => {
+    expect(isIgnoreSyncFile('ignore-sync')).toBe(false)
     expect(isIgnoreSyncFile('.gitignore-sync')).toBe(true)
     expect(isIgnoreSyncFile('.gitignore-sync2')).toBe(false)
   })
