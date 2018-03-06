@@ -1,4 +1,6 @@
 # ignore-sync
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/foray1010/ignore-sync.svg)](https://greenkeeper.io/)
 a cli tool to build and sync *ignore files across files and repositories
 
 ## why
