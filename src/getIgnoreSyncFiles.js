@@ -38,11 +38,7 @@ const scanDir = (relativeDir, projectRoot, isIgnored) => {
   )
 
   const recursiveScan = promiseMap(
-    R.ifElse(
-      R.test(/\/$/),
-      (relativePath) => scanDir(relativePath, projectRoot, isIgnored),
-      R.identity
-    )
+    R.when(R.test(/\/$/), (relativePath) => scanDir(relativePath, projectRoot, isIgnored))
   )
 
   const dirPath = path.resolve(projectRoot, relativeDir)
