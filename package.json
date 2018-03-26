@@ -6,9 +6,11 @@
   },
   "description": "a CLI tool to build and sync *ignore files across files and repositories",
   "keywords": [
+    ".dockerignore",
     ".eslintignore",
     ".gitignore",
     ".npmignore",
+    "dockerignore",
     "eslintignore",
     "gitignore",
     "ignore",
