@@ -24,7 +24,7 @@ const getIsIgnored = async (projectRoot) => {
     const ignoreInstance = ignore()
     return R.bind(ignoreInstance.add(ignorePattern).ignores, ignoreInstance)
   } else {
-    return R.always(false)
+    return R.F
   }
 }
 
