@@ -32,7 +32,8 @@
   },
   "lint-staged": {
     "*.js": ["prettier-eslint --write", "eslint --fix", "git add"],
-    "*.json": ["prettier-eslint --write", "git add"]
+    "*.json": ["prettier-eslint --write", "git add"],
+    "*.md": ["markdownlint"]
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -48,6 +49,7 @@
     "husky": "^0.14.0",
     "jest": "^22.4.2",
     "lint-staged": "^7.0.0",
+    "markdownlint-cli": "^0.8.1",
     "prettier-eslint-cli": "^4.3.2"
   }
 }
