@@ -31,9 +31,12 @@
     "coverageReporters": ["lcov", "text-summary"]
   },
   "lint-staged": {
-    "*.js": ["prettier-eslint --write", "eslint --fix", "git add"],
-    "*.json": ["prettier-eslint --write", "git add"],
-    "*.md": ["markdownlint"]
+    "ignore": ["CHANGELOG.md"],
+    "linters": {
+      "*.js": ["prettier-eslint --write", "eslint --fix", "git add"],
+      "*.json": ["prettier-eslint --write", "git add"],
+      "*.md": ["markdownlint"]
+    }
   },
   "dependencies": {
     "axios": "^0.18.0",
