@@ -10,7 +10,7 @@ const writeIgnoreFile = require('./writeIgnoreFile')
 const {dynamicComposeP, promiseMap} = require('./utils/ramdaHelper')
 
 module.exports = async () => {
-  const projectRoot = await pkgDir()
+  const projectRoot = (await pkgDir()) || process.cwd()
 
   const ignoreSyncFilePaths = await getIgnoreSyncFiles(projectRoot)
 
