@@ -2,12 +2,14 @@
 
 const R = require('ramda')
 
-const removeComment = R.compose(R.nth(0), R.split('#'))
+const {COMMENT_CHAR, LINE_BREAK} = require('./constants')
+
+const removeComment = R.compose(R.nth(0), R.split(COMMENT_CHAR))
 const removeEmptyLines = R.reject((line) => line === '')
 
 module.exports = R.compose(
-  R.join('\n'),
+  R.join(LINE_BREAK),
   removeEmptyLines,
   R.map(R.compose(R.trim, removeComment)),
-  R.split('\n')
+  R.split(LINE_BREAK)
 )

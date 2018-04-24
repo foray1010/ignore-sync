@@ -3,6 +3,7 @@
 const R = require('ramda')
 
 const cleanupIgnoreSyncFile = require('./cleanupIgnoreSyncFile')
+const {LINE_BREAK} = require('./constants')
 
 module.exports = (ignoreSyncFile) =>
   R.compose(
@@ -24,6 +25,6 @@ module.exports = (ignoreSyncFile) =>
         R.init
       ])(acc)
     }, []),
-    R.split('\n'),
+    R.split(LINE_BREAK),
     cleanupIgnoreSyncFile
   )(ignoreSyncFile)

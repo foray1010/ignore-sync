@@ -2,17 +2,16 @@
 
 const R = require('ramda')
 
-const commentChar = '#'
-const spacing = ' '
-const leftPad = commentChar + spacing
-const rightPad = spacing + commentChar
+const {COMMENT_CHAR, LINE_BREAK} = require('../constants')
 
-const linebreak = '\n'
+const spacing = ' '
+const leftPad = COMMENT_CHAR + spacing
+const rightPad = spacing + COMMENT_CHAR
 
 module.exports = (commentStr) => {
   if (!commentStr) return ''
 
-  const comments = commentStr.split(linebreak)
+  const comments = commentStr.split(LINE_BREAK)
 
   const maxLen = Math.max(...R.map(R.length, comments))
   const lineLen = leftPad.length + maxLen + rightPad.length
@@ -21,7 +20,7 @@ module.exports = (commentStr) => {
     (comment) => leftPad + comment.padEnd(maxLen, spacing) + rightPad,
     comments
   )
-  const verticalPad = commentChar.repeat(lineLen)
+  const verticalPad = COMMENT_CHAR.repeat(lineLen)
 
-  return [verticalPad, ...paddedComments, verticalPad].join(linebreak)
+  return [verticalPad, ...paddedComments, verticalPad].join(LINE_BREAK)
 }
