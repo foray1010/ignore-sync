@@ -9,7 +9,7 @@ const readFileFromProjectRoot = require('./readFileFromProjectRoot')
 const {dynamicComposeP, promiseMap} = require('./utils/ramdaHelper')
 
 const isGithubSource = R.test(/^(\w+\/\w+)$/i)
-const joinLinesWithEOF = R.compose(R.flip(R.concat)('\n'), R.trim, R.join('\n'))
+const joinLinesWithEOF = R.compose(R.concat(R.__, '\n'), R.trim, R.join('\n'))
 const prependAlert = R.concat([
   highlightComments(
     R.join('\n', [
