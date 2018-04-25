@@ -6,5 +6,5 @@ const R = require('ramda')
 const dynamicComposeP = (...args) => R.composeP(...args, R.bind(Promise.resolve, Promise))
 exports.dynamicComposeP = dynamicComposeP
 
-const promiseMap = R.curry((fn, array) => R.compose(R.bind(Promise.all, Promise), R.map(fn))(array))
+const promiseMap = R.curry((fn, array) => Promise.all(R.map(fn, array)))
 exports.promiseMap = promiseMap
