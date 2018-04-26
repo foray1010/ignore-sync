@@ -7,10 +7,7 @@ const R = require('ramda')
 const renameIgnoreFile = R.replace(/ignore-sync$/, 'ignore')
 
 module.exports = async (relativePath, projectRoot, fileStr) => {
-  const ignoreFilePath = R.compose(
-    (newRelativePath) => path.join(projectRoot, newRelativePath),
-    renameIgnoreFile
-  )(relativePath)
+  const ignoreFilePath = renameIgnoreFile(path.join(projectRoot, relativePath))
 
   await fs.unlink(ignoreFilePath).catch(() => {})
   await fs.writeFile(ignoreFilePath, fileStr)
