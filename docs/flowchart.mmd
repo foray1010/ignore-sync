@@ -1,0 +1,36 @@
+graph TD
+  A(start); style A fill: yellow
+  B(stop); style B fill: yellow
+  C{are all `path` in <br/> `paths` directories <br/> or ignore-sync files?}
+  D{`paths` length > 0?}
+  E{is `path` a directory?}
+  F[define `paths`]
+  G[generate ignore file by this file]
+  H[generate all ignore files by all ignore-sync files in `path`]
+  I[add directories in `path`, filtered by `gitignoreList`, to `directories`]
+  J{is .gitignore exist in `path`?}
+  K[add .gitignore to `gitignoreList`]
+  L[remove `path` from `paths`]
+  M[define `directories` with `path` as the only item <br/> define `gitignoreList` as empty array]
+  N[`path` = first item of `paths`]
+  O{`directories` length > 0?}
+
+  A --> F
+  F --> C
+  C -- true --> D
+  C -- false --> B
+  D -- true --> N
+  D -- false --> B
+  N --> E
+  E -- true --> M
+  E -- false --> G
+  M --> O
+  O -- true --> H
+  O -- false --> L
+  H --> J
+  J -- true --> K
+  J -- false --> I
+  K --> I
+  I --> O
+  G --> L
+  L --> D

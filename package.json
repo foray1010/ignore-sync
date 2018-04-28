@@ -23,6 +23,7 @@
   "scripts": {
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "lint": "eslint .",
+    "mermaid": "glob-exec --foreach 'docs/**/*.mmd' -- 'mmdc -i {{file}} -o {{file}}.png'",
     "precommit": "lint-staged && yarn test",
     "test": "cross-env NODE_ENV=test jest --config .jestrc.json"
   },
@@ -39,10 +40,12 @@
     "cross-env": "^5.1.1",
     "eslint": "^4.8.0",
     "eslint-config-foray1010": "^6.2.0",
+    "glob-exec": "^0.1.1",
     "husky": "^0.14.0",
     "jest": "^22.4.2",
     "lint-staged": "^7.0.0",
     "markdownlint-cli": "^0.8.1",
+    "mermaid.cli": "^0.4.6",
     "prettier-eslint-cli": "^4.3.2"
   }
 }
