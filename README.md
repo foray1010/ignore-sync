@@ -31,7 +31,7 @@ yarn.lock
     ```diff json
     {
       "scripts": {
-    +   "ignore-sync": "ignore-sync"
+    +   "ignore-sync": "ignore-sync ."
       }
     }
     ```
@@ -55,7 +55,7 @@ yarn.lock
         - ignore patterns under this tag will be copied to generated ignore file directly
     - `[local]`
         - local file paths under this tag will be read and the content of these files will be copied to generated ignore file
-        - file paths are relative to the location of the `ignore-sync` file
+        - file paths are relative to the location of the `*ignore-sync` file
     - `[$username/$repo]`
         - github file paths under this tag will be read and the content of these files will be copied to generated ignore file
         - file paths are relative to the root of the github repository

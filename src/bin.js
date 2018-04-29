@@ -4,6 +4,9 @@
 
 const app = require('./app')
 
-app().catch((err) => {
+const cwd = process.cwd()
+const paths = process.argv.slice(2)
+
+app(cwd, paths).catch((err) => {
   console.error(err.stack)
 })

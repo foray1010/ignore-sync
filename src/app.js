@@ -1,32 +1,34 @@
 'use strict'
 
-const pkgDir = require('pkg-dir')
+const path = require('path')
 const R = require('ramda')
 
-const generateIgnoreFile = require('./generateIgnoreFile')
-const getIgnoreSyncFiles = require('./getIgnoreSyncFiles')
-const readFileFromProjectRoot = require('./readFileFromProjectRoot')
-const writeIgnoreFile = require('./writeIgnoreFile')
-const {dynamicComposeP, promiseMap} = require('./utils/ramdaHelper')
+const isIgnoreSyncFile = require('./isIgnoreSyncFile')
+const processDirectory = require('./processDirectory')
+const processIgnoreSyncFile = require('./processIgnoreSyncFile')
+const {isDirectory} = require('./utils/fsHelper')
+const {promiseMap} = require('./utils/ramdaHelper')
 
-module.exports = async () => {
-  const projectRoot = (await pkgDir()) || process.cwd()
+const validateInputs = async (absolutePath) => {
+  const isDir = await isDirectory(absolutePath)
+  if (isDir) return
 
-  const ignoreSyncFilePaths = await getIgnoreSyncFiles(projectRoot)
+  if (!isIgnoreSyncFile(absolutePath)) {
+    throw new Error(`${absolutePath} is not an ignore-sync file`)
+  }
+}
 
-  const ignoreSyncFiles = await promiseMap(
-    readFileFromProjectRoot(projectRoot),
-    ignoreSyncFilePaths
-  )
+module.exports = async (cwd, relativePaths) => {
+  const absolutePaths = R.map((p) => path.join(cwd, p), relativePaths)
 
-  const ignoreFiles = await promiseMap(
-    (ignoreSyncFile) => generateIgnoreFile(ignoreSyncFile, projectRoot),
-    ignoreSyncFiles
-  )
+  await promiseMap(validateInputs, absolutePaths)
 
-  await dynamicComposeP(
-    promiseMap(([relativePath, ignoreFile]) =>
-      writeIgnoreFile(relativePath, projectRoot, ignoreFile)),
-    R.zip(ignoreSyncFilePaths)
-  )(ignoreFiles)
+  for (const absolutePath of absolutePaths) {
+    const isDir = await isDirectory(absolutePath)
+    if (isDir) {
+      await processDirectory([absolutePath])
+    } else {
+      await processIgnoreSyncFile(absolutePath)
+    }
+  }
 }

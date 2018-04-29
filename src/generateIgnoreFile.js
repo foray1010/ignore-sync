@@ -1,14 +1,15 @@
 'use strict'
 
+const path = require('path')
 const R = require('ramda')
 
 const decodeIgnoreSyncFile = require('./decodeIgnoreSyncFile')
 const github = require('./utils/github')
 const highlightComments = require('./utils/highlightComments')
 const joinLinesWithEOF = require('./utils/joinLinesWithEOF')
-const readFileFromProjectRoot = require('./readFileFromProjectRoot')
 const {COMMENT_HEADER_ALERT} = require('./constants')
 const {dynamicComposeP, promiseMap} = require('./utils/ramdaHelper')
+const {readFile} = require('./utils/fsHelper')
 
 const isGithubSource = R.test(/^(\w+\/\w+)$/i)
 const prependAlert = R.concat([highlightComments(COMMENT_HEADER_ALERT), ''])
@@ -23,16 +24,19 @@ const githubSourceFetcher = async (block) => {
   )
   return joinLinesWithEOF(files)
 }
-const localSourceFetcher = async (block, projectRoot) => {
-  const files = await promiseMap(readFileFromProjectRoot(projectRoot), block.data)
+const localSourceFetcher = async (block, directory) => {
+  const files = await promiseMap(
+    (relativeFilePath) => readFile(path.join(directory, relativeFilePath)),
+    block.data
+  )
   return joinLinesWithEOF(files)
 }
 
-module.exports = (ignoreSyncFile, projectRoot) => {
+module.exports = (ignoreSyncFile, directory) => {
   const fetchIgnorePatternsBySource = promiseMap(
     R.cond([
       [sourceIs(R.equals('inline')), inlineSourceFetcher],
-      [sourceIs(R.equals('local')), (block) => localSourceFetcher(block, projectRoot)],
+      [sourceIs(R.equals('local')), (block) => localSourceFetcher(block, directory)],
       [sourceIs(isGithubSource), githubSourceFetcher],
       [
         R.T,
