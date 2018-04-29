@@ -12,3 +12,4 @@ linters:
     - "markdownlint"
   "*.mmd":
     - "yarn mermaid"
+    - "git add"
