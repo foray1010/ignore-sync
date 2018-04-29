@@ -9,4 +9,5 @@ __mocks__/
 .*
 *.test.js
 circle.yml
+docs/
 yarn.lock
