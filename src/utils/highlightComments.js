@@ -8,7 +8,7 @@ const spacing = ' '
 const leftPad = COMMENT_CHAR + spacing
 const rightPad = spacing + COMMENT_CHAR
 
-module.exports = (commentStr) => {
+const highlightComments = (commentStr) => {
   if (!commentStr) return ''
 
   const comments = commentStr.split(LINE_BREAK)
@@ -24,3 +24,4 @@ module.exports = (commentStr) => {
 
   return [verticalPad, ...paddedComments, verticalPad].join(LINE_BREAK)
 }
+module.exports = highlightComments

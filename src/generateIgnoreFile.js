@@ -32,7 +32,7 @@ const localSourceFetcher = async (block, directory) => {
   return joinLinesWithEOF(files)
 }
 
-module.exports = (ignoreSyncFile, directory) => {
+const generateIgnoreFile = (ignoreSyncFile, directory) => {
   const fetchIgnorePatternsBySource = promiseMap(
     R.cond([
       [sourceIs(R.equals('inline')), inlineSourceFetcher],
@@ -54,3 +54,4 @@ module.exports = (ignoreSyncFile, directory) => {
     decodeIgnoreSyncFile
   )(ignoreSyncFile)
 }
+module.exports = generateIgnoreFile

@@ -10,7 +10,7 @@ const appendToLastData = (blocks, datum) => [
   R.compose(R.over(R.lensProp('data'), R.append(datum)), R.last)(blocks)
 ]
 
-module.exports = (ignoreSyncFile) =>
+const decodeIgnoreSyncFile = (ignoreSyncFile) =>
   R.compose(
     R.reduce((acc, line) => {
       if (/^\[(.*)\]$/.test(line)) {
@@ -30,3 +30,4 @@ module.exports = (ignoreSyncFile) =>
     R.split(LINE_BREAK),
     cleanupIgnoreSyncFile
   )(ignoreSyncFile)
+module.exports = decodeIgnoreSyncFile

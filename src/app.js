@@ -18,7 +18,7 @@ const validateInputs = async (absolutePath) => {
   }
 }
 
-module.exports = async (cwd, relativePaths) => {
+const startApp = async (cwd, relativePaths) => {
   const absolutePaths = R.map((p) => path.join(cwd, p), relativePaths)
 
   await promiseMap(validateInputs, absolutePaths)
@@ -32,3 +32,4 @@ module.exports = async (cwd, relativePaths) => {
     }
   }
 }
+module.exports = startApp
