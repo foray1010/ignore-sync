@@ -19,7 +19,7 @@ const inlineSourceFetcher = R.compose(joinLinesWithEOF, R.prop('data'))
 const githubSourceFetcher = async (block) => {
   const [owner, repo] = block.source.split('/')
   const files = await promiseMap(
-    (relativePath) => github.getContentFile(owner, repo, relativePath),
+    (relativePath) => github.getContentFile({owner, repo, path: relativePath}),
     block.data
   )
   return joinLinesWithEOF(files)
