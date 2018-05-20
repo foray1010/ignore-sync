@@ -43,7 +43,7 @@
     "husky": "^0.14.0",
     "jest": "^22.4.2",
     "lint-staged": "^7.0.0",
-    "markdownlint-cli": "^0.8.1",
+    "markdownlint-cli": "^0.9.0",
     "mermaid.cli": "^0.4.6",
     "prettier-eslint-cli": "^4.3.2"
   }
