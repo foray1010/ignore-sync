@@ -30,7 +30,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "fs-extra": "^6.0.0",
-    "ignore": "^3.3.7",
+    "ignore": "^4.0.0",
     "ramda": "^0.25.0"
   },
   "devDependencies": {
