@@ -28,7 +28,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "fs-extra": "^7.0.1",
-    "ignore": "^3.3.7",
+    "ignore": "^5.0.4",
     "ramda": "^0.25.0"
   },
   "devDependencies": {
