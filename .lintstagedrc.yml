@@ -1,15 +1,16 @@
 ignore:
-  - "CHANGELOG.md"
+  - 'CHANGELOG.md'
 linters:
-  "*.js":
-    - "prettier-eslint --write"
-    - "eslint --fix"
-    - "git add"
-  "*.json":
-    - "prettier-eslint --write"
-    - "git add"
-  "*.md":
-    - "markdownlint"
-  "*.mmd":
-    - "yarn mermaid"
-    - "git add"
+  '*.js':
+    - 'prettier-eslint --write'
+    - 'eslint --fix'
+    - 'jest --bail --findRelatedTests --config .jestrc.json'
+    - 'git add'
+  '*.{json,yaml,yml}':
+    - 'prettier-eslint --write'
+    - 'git add'
+  '*.md':
+    - 'markdownlint'
+  '*.mmd':
+    - 'yarn mermaid'
+    - 'git add'
