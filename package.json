@@ -1,6 +1,6 @@
 {
   "name": "ignore-sync",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "engines": {
     "node": ">=7.6"
   },
