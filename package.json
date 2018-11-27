@@ -29,7 +29,7 @@
     "axios": "^0.18.0",
     "fs-extra": "^7.0.1",
     "ignore": "^5.0.4",
-    "ramda": "^0.25.0"
+    "ramda": "^0.26.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^7.2.1",
