@@ -34,7 +34,7 @@
   "devDependencies": {
     "@commitlint/cli": "8.0.0",
     "@commitlint/config-conventional": "8.0.0",
-    "cross-env": "5.1.1",
+    "cross-env": "5.2.0",
     "eslint": "5.16.0",
     "eslint-config-foray1010": "7.3.0",
     "glob-exec": "0.1.1",
@@ -43,6 +43,6 @@
     "lint-staged": "8.2.0",
     "markdownlint-cli": "0.16.0",
     "mermaid.cli": "0.5.1",
-    "prettier-eslint-cli": "4.3.2"
+    "prettier-eslint-cli": "4.7.1"
   }
 }
