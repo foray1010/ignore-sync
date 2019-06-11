@@ -6,7 +6,6 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Bug Fixes
 
-- **deps:** pin dependencies ([1572f61](https://github.com/foray1010/ignore-sync/commit/1572f61))
 - **deps:** update dependency axios to v0.19.0 ([5b62722](https://github.com/foray1010/ignore-sync/commit/5b62722))
 - **deps:** update dependency fs-extra to v8 ([#40](https://github.com/foray1010/ignore-sync/issues/40)) ([8c9d309](https://github.com/foray1010/ignore-sync/commit/8c9d309))
 
