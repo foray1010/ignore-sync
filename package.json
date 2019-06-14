@@ -41,7 +41,7 @@
     "husky": "2.4.1",
     "jest": "24.8.0",
     "lint-staged": "8.2.1",
-    "markdownlint-cli": "0.16.0",
+    "markdownlint-cli": "0.17.0",
     "mermaid.cli": "0.5.1",
     "prettier-eslint-cli": "4.7.1"
   }
