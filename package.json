@@ -43,6 +43,6 @@
     "lint-staged": "8.2.1",
     "markdownlint-cli": "0.17.0",
     "mermaid.cli": "0.5.1",
-    "prettier-eslint-cli": "4.7.1"
+    "prettier-eslint-cli": "5.0.0"
   }
 }
