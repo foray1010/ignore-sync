@@ -40,7 +40,7 @@
     "glob-exec": "0.1.1",
     "husky": "3.0.5",
     "jest": "24.9.0",
-    "lint-staged": "9.3.0",
+    "lint-staged": "9.4.0",
     "markdownlint-cli": "0.18.0",
     "mermaid.cli": "0.5.1",
     "prettier-eslint-cli": "5.0.0"
