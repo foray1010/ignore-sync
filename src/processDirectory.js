@@ -6,9 +6,7 @@ const R = require('ramda')
 
 const getIgnoreSyncFiles = require('./getIgnoreSyncFiles')
 const processIgnoreSyncFile = require('./processIgnoreSyncFile')
-const {
-  isDirectory, isReadable, readDir, readFile
-} = require('./utils/fsHelper')
+const {isDirectory, isReadable, readDir, readFile} = require('./utils/fsHelper')
 const {promiseFilter, promiseMap} = require('./utils/ramdaHelper')
 
 const filterByGitIgnoreFilters = (absoluteDataPaths, gitIgnoreFilters) => {
@@ -16,15 +14,18 @@ const filterByGitIgnoreFilters = (absoluteDataPaths, gitIgnoreFilters) => {
   return R.filter(R.allPass(gitIgnoreFilters), absoluteDataPaths)
 }
 
-const filterDirPaths = R.composeP(R.map(R.concat(R.__, path.sep)), promiseFilter(isDirectory))
+const filterDirPaths = R.composeP(
+  R.map(R.concat(R.__, path.sep)),
+  promiseFilter(isDirectory)
+)
 
-const getGitIgnoreFilter = async (directory) => {
+const getGitIgnoreFilter = async directory => {
   const gitIgnorePath = path.join(directory, '.gitignore')
   const isGitIgnoreReadable = await isReadable(gitIgnorePath)
   if (isGitIgnoreReadable) {
     const gitIgnorePattern = await readFile(gitIgnorePath)
     const gitIgnore = ignore().add(gitIgnorePattern)
-    return (absolutePath) => {
+    return absolutePath => {
       const relativePath =
         path.relative(directory, absolutePath) +
         // keep trailing `path.sep` as gitignore may use it to ignore directories

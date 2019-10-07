@@ -1,13 +1,13 @@
 '*.js':
-  - 'prettier-eslint --write'
+  - 'prettier --write'
   - 'eslint --fix'
   - 'jest --bail --findRelatedTests --config .jestrc.json'
   - 'git add'
 '*.{json,yaml,yml}':
-  - 'prettier-eslint --write'
+  - 'prettier --write'
   - 'git add'
 '*.md':
-  - 'prettier-eslint --write'
+  - 'prettier --write'
   - 'markdownlint'
   - 'git add'
 '*.mmd':

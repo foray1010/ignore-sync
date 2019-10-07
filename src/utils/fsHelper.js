@@ -4,7 +4,7 @@ const fs = require('fs-extra')
 const path = require('path')
 const R = require('ramda')
 
-const isReadable = async (dataPath) => {
+const isReadable = async dataPath => {
   try {
     await fs.access(dataPath, fs.constants.R_OK)
     return true
@@ -14,7 +14,7 @@ const isReadable = async (dataPath) => {
 }
 exports.isReadable = isReadable
 
-const isDirectory = async (dataPath) => {
+const isDirectory = async dataPath => {
   const stats = await fs.stat(dataPath)
   return stats.isDirectory()
 }
@@ -26,16 +26,13 @@ const overwriteFile = async (filePath, fileStr) => {
 }
 exports.overwriteFile = overwriteFile
 
-const readDir = async (absoluteDirPath) => {
+const readDir = async absoluteDirPath => {
   const relativeDataPaths = await fs.readdir(absoluteDirPath)
-  return R.map(
-    (relativeDataPath) => path.join(absoluteDirPath, relativeDataPath),
-    relativeDataPaths
-  )
+  return R.map(relativeDataPath => path.join(absoluteDirPath, relativeDataPath), relativeDataPaths)
 }
 exports.readDir = readDir
 
-const readFile = async (filePath) => {
+const readFile = async filePath => {
   const fileBuffer = await fs.readFile(filePath)
   return String(fileBuffer)
 }
