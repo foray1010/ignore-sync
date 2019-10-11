@@ -6,8 +6,8 @@ const R = require('ramda')
 const isIgnoreSyncFile = require('./isIgnoreSyncFile')
 const processDirectory = require('./processDirectory')
 const processIgnoreSyncFile = require('./processIgnoreSyncFile')
-const {isDirectory} = require('./utils/fsHelper')
-const {promiseMap} = require('./utils/ramdaHelper')
+const { isDirectory } = require('./utils/fsHelper')
+const { promiseMap } = require('./utils/ramdaHelper')
 
 const validateInputs = async absolutePath => {
   const isDir = await isDirectory(absolutePath)

@@ -5,6 +5,6 @@ const R = require('ramda')
 
 const isIgnoreSyncFile = R.compose(
   R.test(/.+ignore-sync$/),
-  path.basename
+  path.basename,
 )
 module.exports = isIgnoreSyncFile

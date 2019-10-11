@@ -9,7 +9,7 @@ describe('highlightComments', () => {
 #####
 # a #
 #####
-      `.trim()
+      `.trim(),
     )
 
     expect(highlightComments('a\nbc')).toBe(
@@ -18,7 +18,7 @@ describe('highlightComments', () => {
 # a  #
 # bc #
 ######
-      `.trim()
+      `.trim(),
     )
 
     expect(highlightComments('ab\ncd')).toBe(
@@ -27,7 +27,7 @@ describe('highlightComments', () => {
 # ab #
 # cd #
 ######
-      `.trim()
+      `.trim(),
     )
 
     expect(highlightComments('a\nbc\ndef')).toBe(
@@ -37,7 +37,7 @@ describe('highlightComments', () => {
 # bc  #
 # def #
 #######
-      `.trim()
+      `.trim(),
     )
   })
 

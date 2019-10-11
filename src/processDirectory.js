@@ -6,8 +6,13 @@ const R = require('ramda')
 
 const getIgnoreSyncFiles = require('./getIgnoreSyncFiles')
 const processIgnoreSyncFile = require('./processIgnoreSyncFile')
-const {isDirectory, isReadable, readDir, readFile} = require('./utils/fsHelper')
-const {promiseFilter, promiseMap} = require('./utils/ramdaHelper')
+const {
+  isDirectory,
+  isReadable,
+  readDir,
+  readFile,
+} = require('./utils/fsHelper')
+const { promiseFilter, promiseMap } = require('./utils/ramdaHelper')
 
 const filterByGitIgnoreFilters = (absoluteDataPaths, gitIgnoreFilters) => {
   if (gitIgnoreFilters.length === 0) return absoluteDataPaths
@@ -16,7 +21,7 @@ const filterByGitIgnoreFilters = (absoluteDataPaths, gitIgnoreFilters) => {
 
 const filterDirPaths = R.composeP(
   R.map(R.concat(R.__, path.sep)),
-  promiseFilter(isDirectory)
+  promiseFilter(isDirectory),
 )
 
 const getGitIgnoreFilter = async directory => {
@@ -44,11 +49,16 @@ const processDirectory = async (directories, gitIgnoreFilters = []) => {
     await promiseMap(processIgnoreSyncFile, ignoreSyncFilePaths)
 
     const gitIgnore = await getGitIgnoreFilter(directory)
-    const updatedGitIgnoreFilters = [...gitIgnoreFilters, gitIgnore].filter(Boolean)
+    const updatedGitIgnoreFilters = [...gitIgnoreFilters, gitIgnore].filter(
+      Boolean,
+    )
 
     const absoluteDataPaths = await readDir(directory)
     const absoluteDirPaths = await filterDirPaths(absoluteDataPaths)
-    const filteredDirPaths = filterByGitIgnoreFilters(absoluteDirPaths, updatedGitIgnoreFilters)
+    const filteredDirPaths = filterByGitIgnoreFilters(
+      absoluteDirPaths,
+      updatedGitIgnoreFilters,
+    )
 
     processDirectory(filteredDirPaths, updatedGitIgnoreFilters)
   }

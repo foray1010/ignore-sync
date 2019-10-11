@@ -6,10 +6,10 @@ const getContentFile = async ({
   owner,
   path,
   ref = 'master', // commit/branch/tag
-  repo
+  repo,
 }) => {
-  const {data: file} = await axios.get(
-    `https://raw.githubusercontent.com/${owner}/${repo}/${ref}/${path}`
+  const { data: file } = await axios.get(
+    `https://raw.githubusercontent.com/${owner}/${repo}/${ref}/${path}`,
   )
   return file
 }

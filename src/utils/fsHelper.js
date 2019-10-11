@@ -28,7 +28,10 @@ exports.overwriteFile = overwriteFile
 
 const readDir = async absoluteDirPath => {
   const relativeDataPaths = await fs.readdir(absoluteDirPath)
-  return R.map(relativeDataPath => path.join(absoluteDirPath, relativeDataPath), relativeDataPaths)
+  return R.map(
+    relativeDataPath => path.join(absoluteDirPath, relativeDataPath),
+    relativeDataPaths,
+  )
 }
 exports.readDir = readDir
 

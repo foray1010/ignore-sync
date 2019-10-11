@@ -35,6 +35,7 @@
     "@commitlint/cli": "8.2.0",
     "@commitlint/config-conventional": "8.2.0",
     "@foray1010/eslint-config": "1.2.3",
+    "@foray1010/prettierrc": "1.0.1",
     "cross-env": "6.0.3",
     "eslint": "6.5.1",
     "glob-exec": "0.1.1",

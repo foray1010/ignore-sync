@@ -2,7 +2,7 @@
 
 const R = require('ramda')
 
-const {COMMENT_CHAR, LINE_BREAK} = require('../constants')
+const { COMMENT_CHAR, LINE_BREAK } = require('../constants')
 
 const spacing = ' '
 const leftPad = COMMENT_CHAR + spacing
@@ -18,7 +18,7 @@ const highlightComments = commentStr => {
 
   const paddedComments = R.map(
     comment => leftPad + comment.padEnd(maxLen, spacing) + rightPad,
-    comments
+    comments,
   )
   const verticalPad = COMMENT_CHAR.repeat(lineLen)
 

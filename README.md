@@ -1,6 +1,6 @@
 # ignore-sync
 
-a cli tool to build and sync *ignore files across files and repositories
+a cli tool to build and sync \*ignore files across files and repositories
 
 ## why
 
@@ -28,6 +28,7 @@ yarn.lock
 
 1. `npm install --save-dev ignore-sync`
 1. update `package.json`
+
     ```diff json
     {
       "scripts": {
@@ -35,6 +36,7 @@ yarn.lock
       }
     }
     ```
+
 1. now follow [how to use](#how-to-use) to create `*ignore-sync` files, then `npm run ignore-sync`, all corresponding ignore files will be generated.
 
 ## how to use

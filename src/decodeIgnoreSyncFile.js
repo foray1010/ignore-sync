@@ -3,14 +3,14 @@
 const R = require('ramda')
 
 const cleanupIgnoreSyncFile = require('./cleanupIgnoreSyncFile')
-const {LINE_BREAK} = require('./constants')
+const { LINE_BREAK } = require('./constants')
 
 const appendToLastData = (blocks, datum) => [
   ...R.init(blocks),
   R.compose(
     R.over(R.lensProp('data'), R.append(datum)),
-    R.last
-  )(blocks)
+    R.last,
+  )(blocks),
 ]
 
 const decodeIgnoreSyncFile = ignoreSyncFile =>
@@ -21,16 +21,17 @@ const decodeIgnoreSyncFile = ignoreSyncFile =>
           ...acc,
           {
             source: RegExp.$1,
-            data: []
-          }
+            data: [],
+          },
         ]
       }
 
-      if (!acc.length) throw new Error('source `[]` not found before ignore pattern is found')
+      if (!acc.length)
+        throw new Error('source `[]` not found before ignore pattern is found')
 
       return appendToLastData(acc, line)
     }, []),
     R.split(LINE_BREAK),
-    cleanupIgnoreSyncFile
+    cleanupIgnoreSyncFile,
   )(ignoreSyncFile)
 module.exports = decodeIgnoreSyncFile
