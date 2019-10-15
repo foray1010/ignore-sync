@@ -24,7 +24,7 @@
     "eslint": "eslint --ext=js,mjs,ts,tsx --ignore-path=node_modules/@foray1010/eslint-config/eslintignore",
     "lint": "yarn eslint .",
     "mermaid": "glob-exec --foreach 'docs/**/*.mmd' -- 'mmdc -i {{file}} -o {{file}}.png'",
-    "prettier": "prettier --ignore-path=node_modules/@foray1010/prettierrc/prettierignore",
+    "prettier": "prettier --ignore-path=node_modules/@foray1010/prettier-config/prettierignore",
     "test": "cross-env NODE_ENV=test jest --config .jestrc.json"
   },
   "dependencies": {
@@ -37,7 +37,7 @@
     "@commitlint/cli": "8.2.0",
     "@commitlint/config-conventional": "8.2.0",
     "@foray1010/eslint-config": "1.3.0",
-    "@foray1010/prettierrc": "1.1.0",
+    "@foray1010/prettier-config": "1.1.0",
     "cross-env": "6.0.3",
     "eslint": "6.5.1",
     "glob-exec": "0.1.1",
