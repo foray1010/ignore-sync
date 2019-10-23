@@ -8,7 +8,7 @@
   - 'git add'
 '*.md':
   - 'yarn prettier --write'
-  - 'markdownlint'
+  - 'yarn remark'
   - 'git add'
 '*.mmd':
   - 'yarn mermaid'

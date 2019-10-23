@@ -21,10 +21,13 @@
   "repository": "https://github.com/foray1010/ignore-sync",
   "bin": "src/bin.js",
   "scripts": {
+    "ci": "yarn lint:js && yarn lint:md && yarn test",
     "eslint": "eslint --ext=js,mjs,ts,tsx --ignore-path=node_modules/@foray1010/eslint-config/eslintignore",
-    "lint": "yarn eslint .",
+    "lint:js": "yarn eslint .",
+    "lint:md": "yarn remark .",
     "mermaid": "glob-exec --foreach 'docs/**/*.mmd' -- 'mmdc -i {{file}} -o {{file}}.png'",
     "prettier": "prettier --ignore-path=node_modules/@foray1010/prettier-config/prettierignore",
+    "remark": "remark --frail --ignore-path=.gitignore",
     "test": "cross-env NODE_ENV=test jest --config .jestrc.json"
   },
   "dependencies": {
@@ -38,6 +41,7 @@
     "@commitlint/config-conventional": "8.2.0",
     "@foray1010/eslint-config": "1.6.0",
     "@foray1010/prettier-config": "1.5.0",
+    "@foray1010/remark-preset": "1.1.1",
     "cross-env": "6.0.3",
     "eslint": "6.5.1",
     "glob-exec": "0.1.1",
@@ -45,6 +49,7 @@
     "jest": "24.9.0",
     "lint-staged": "9.4.2",
     "mermaid.cli": "0.5.1",
-    "prettier": "1.18.2"
+    "prettier": "1.18.2",
+    "remark-cli": "7.0.0"
   }
 }
