@@ -22,7 +22,7 @@
   "bin": "src/bin.js",
   "scripts": {
     "ci": "yarn lint:js && yarn lint:md && yarn test",
-    "eslint": "eslint --ext=js,mjs,ts,tsx --ignore-path=node_modules/@foray1010/eslint-config/eslintignore",
+    "eslint": "eslint --ext=cjs,js,mjs,ts,tsx --ignore-path=node_modules/@foray1010/eslint-config/eslintignore",
     "lint:js": "yarn eslint .",
     "lint:md": "yarn remark .",
     "mermaid": "glob-exec --foreach 'docs/**/*.mmd' -- 'mmdc -i {{file}} -o {{file}}.png'",
