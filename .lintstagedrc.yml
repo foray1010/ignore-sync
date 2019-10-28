@@ -13,3 +13,7 @@
 '*.mmd':
   - 'yarn mermaid'
   - 'git add'
+'package.json':
+  - 'sort-package-json'
+  - 'yarn prettier --write'
+  - 'git add'

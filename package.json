@@ -1,9 +1,6 @@
 {
   "name": "ignore-sync",
   "version": "2.0.1",
-  "engines": {
-    "node": ">=7.6"
-  },
   "description": "a CLI tool to build and sync *ignore files across files and repositories",
   "keywords": [
     ".dockerignore",
@@ -16,9 +13,9 @@
     "ignore",
     "npmignore"
   ],
+  "repository": "https://github.com/foray1010/ignore-sync",
   "license": "MIT",
   "author": "foray1010",
-  "repository": "https://github.com/foray1010/ignore-sync",
   "bin": "src/bin.js",
   "scripts": {
     "ci": "yarn lint:js && yarn lint:md && yarn test",
@@ -50,6 +47,10 @@
     "lint-staged": "9.4.2",
     "mermaid.cli": "0.5.1",
     "prettier": "1.18.2",
-    "remark-cli": "7.0.0"
+    "remark-cli": "7.0.0",
+    "sort-package-json": "1.22.1"
+  },
+  "engines": {
+    "node": ">=7.6"
   }
 }
