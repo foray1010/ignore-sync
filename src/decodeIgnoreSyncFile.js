@@ -7,10 +7,7 @@ const { LINE_BREAK } = require('./constants')
 
 const appendToLastData = (blocks, datum) => [
   ...R.init(blocks),
-  R.compose(
-    R.over(R.lensProp('data'), R.append(datum)),
-    R.last,
-  )(blocks),
+  R.compose(R.over(R.lensProp('data'), R.append(datum)), R.last)(blocks),
 ]
 
 const decodeIgnoreSyncFile = ignoreSyncFile =>

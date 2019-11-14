@@ -13,16 +13,9 @@ const { readFile } = require('./utils/fsHelper')
 
 const isGithubSource = R.test(/^(\w+\/\w+)$/i)
 const prependAlert = R.concat([highlightComments(COMMENT_HEADER_ALERT), ''])
-const sourceIs = (...args) =>
-  R.compose(
-    ...args,
-    R.prop('source'),
-  )
+const sourceIs = (...args) => R.compose(...args, R.prop('source'))
 
-const inlineSourceFetcher = R.compose(
-  joinLinesWithEOF,
-  R.prop('data'),
-)
+const inlineSourceFetcher = R.compose(joinLinesWithEOF, R.prop('data'))
 const githubSourceFetcher = async block => {
   const [owner, repo] = block.source.split('/')
   const files = await promiseMap(
