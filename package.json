@@ -44,7 +44,7 @@
     "glob-exec": "0.1.1",
     "husky": "3.0.9",
     "jest": "24.9.0",
-    "lint-staged": "9.4.2",
+    "lint-staged": "9.4.3",
     "mermaid.cli": "0.5.1",
     "prettier": "1.19.1",
     "remark-cli": "7.0.1",
