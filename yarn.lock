@@ -277,10 +277,10 @@
   dependencies:
     read-pkg-up "^7.0.0"
 
-"@foray1010/eslint-config@2.0.2":
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/@foray1010/eslint-config/-/eslint-config-2.0.2.tgz#ff24834cb2b000619bc6702cc7037825783a838f"
-  integrity sha512-cRSRfwoAf5awQxWTdCBf+/ZfstrwuGGIxTrHtOfboYc9+qcgCnFdw029UinlQ9HNYtjJ2lSOF+OlJ3p7dKxIAA==
+"@foray1010/eslint-config@2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@foray1010/eslint-config/-/eslint-config-2.1.0.tgz#3d1eb90b21e3892b0ea62c10fbdfe95e4ee7aaf7"
+  integrity sha512-Ae+wNMhlXijDMVMV8SV9Tb7BTBt4OEF+86aueQyyAezVmoqdc/uYJWjbdvn4SeTokuF3LKpwR1+yhHYRCjUWWw==
   dependencies:
     "@foray1010/common-presets-utils" "^2.0.0"
     "@typescript-eslint/eslint-plugin" "^2.3.2"
@@ -293,6 +293,7 @@
     eslint-plugin-prettier "^3.1.1"
     eslint-plugin-react "^7.16.0"
     eslint-plugin-react-hooks "^2.1.2"
+    eslint-plugin-simple-import-sort "^5.0.0"
 
 "@foray1010/prettier-config@3.0.0":
   version "3.0.0"
@@ -1902,6 +1903,11 @@ eslint-plugin-react@^7.16.0:
     object.values "^1.1.0"
     prop-types "^15.7.2"
     resolve "^1.13.1"
+
+eslint-plugin-simple-import-sort@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-simple-import-sort/-/eslint-plugin-simple-import-sort-5.0.0.tgz#fd2abac52c0ae6050baf340c004b0b5d9aa76e8e"
+  integrity sha512-Zn6OppySnbwl/UonkzmMBbiFXZwe/tI9ZlSXwQek5h1FfPv3hcDTE3kG0SC70pBsKuVE8IMwZCMl0tKwcY89rw==
 
 eslint-scope@^5.0.0:
   version "5.0.0"
