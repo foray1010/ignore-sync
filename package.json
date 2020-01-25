@@ -28,7 +28,7 @@
     "test": "cross-env NODE_ENV=test jest --config .jestrc.json"
   },
   "dependencies": {
-    "axios": "0.19.1",
+    "axios": "0.19.2",
     "fs-extra": "8.1.0",
     "ignore": "5.1.4",
     "ramda": "0.26.1"
