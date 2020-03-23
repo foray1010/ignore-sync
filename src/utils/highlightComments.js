@@ -13,12 +13,11 @@ const highlightComments = commentStr => {
 
   const comments = commentStr.split(LINE_BREAK)
 
-  const maxLen = Math.max(...R.map(R.length, comments))
+  const maxLen = Math.max(...comments.map(R.length))
   const lineLen = leftPad.length + maxLen + rightPad.length
 
-  const paddedComments = R.map(
+  const paddedComments = comments.map(
     comment => leftPad + comment.padEnd(maxLen, spacing) + rightPad,
-    comments,
   )
   const verticalPad = COMMENT_CHAR.repeat(lineLen)
 

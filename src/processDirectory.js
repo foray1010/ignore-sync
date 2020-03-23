@@ -16,7 +16,7 @@ const { promiseFilter, promiseMap } = require('./utils/ramdaHelper')
 
 const filterByGitIgnoreFilters = (absoluteDataPaths, gitIgnoreFilters) => {
   if (gitIgnoreFilters.length === 0) return absoluteDataPaths
-  return R.filter(R.allPass(gitIgnoreFilters), absoluteDataPaths)
+  return absoluteDataPaths.filter(R.allPass(gitIgnoreFilters))
 }
 
 const filterDirPaths = R.composeP(

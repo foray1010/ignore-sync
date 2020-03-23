@@ -1,7 +1,6 @@
 'use strict'
 
 const path = require('path')
-const R = require('ramda')
 
 const isIgnoreSyncFile = require('./isIgnoreSyncFile')
 const processDirectory = require('./processDirectory')
@@ -19,7 +18,7 @@ const validateInputs = async absolutePath => {
 }
 
 const startApp = async (cwd, relativePaths) => {
-  const absolutePaths = R.map(p => path.join(cwd, p), relativePaths)
+  const absolutePaths = relativePaths.map(p => path.join(cwd, p))
 
   await promiseMap(validateInputs, absolutePaths)
 

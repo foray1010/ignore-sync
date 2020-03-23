@@ -2,7 +2,6 @@
 
 const fs = require('fs')
 const path = require('path')
-const R = require('ramda')
 
 const isReadable = async dataPath => {
   try {
@@ -28,10 +27,9 @@ exports.overwriteFile = overwriteFile
 
 const readDir = async absoluteDirPath => {
   const relativeDataPaths = await fs.promises.readdir(absoluteDirPath)
-  return R.map(
-    relativeDataPath => path.join(absoluteDirPath, relativeDataPath),
-    relativeDataPaths,
-  )
+  return relativeDataPaths.map(relativeDataPath => {
+    return path.join(absoluteDirPath, relativeDataPath)
+  })
 }
 exports.readDir = readDir
 
