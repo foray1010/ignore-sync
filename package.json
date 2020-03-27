@@ -45,7 +45,7 @@
     "jest": "25.1.0",
     "lint-staged": "10.0.8",
     "mermaid.cli": "0.5.1",
-    "prettier": "1.19.1",
+    "prettier": "2.0.2",
     "remark-cli": "7.0.1",
     "sort-package-json": "1.40.0"
   },
