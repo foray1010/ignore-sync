@@ -10,7 +10,7 @@ const appendToLastData = (blocks, datum) => [
   R.compose(R.over(R.lensProp('data'), R.append(datum)), R.last)(blocks),
 ]
 
-const decodeIgnoreSyncFile = ignoreSyncFile =>
+const decodeIgnoreSyncFile = (ignoreSyncFile) =>
   R.compose(
     R.reduce((acc, line) => {
       if (/^\[(.*)\]$/.test(line)) {

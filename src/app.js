@@ -8,7 +8,7 @@ const processIgnoreSyncFile = require('./processIgnoreSyncFile')
 const { isDirectory } = require('./utils/fsHelper')
 const { promiseMap } = require('./utils/ramdaHelper')
 
-const validateInputs = async absolutePath => {
+const validateInputs = async (absolutePath) => {
   const isDir = await isDirectory(absolutePath)
   if (isDir) return
 
@@ -18,7 +18,7 @@ const validateInputs = async absolutePath => {
 }
 
 const startApp = async (cwd, relativePaths) => {
-  const absolutePaths = relativePaths.map(p => path.join(cwd, p))
+  const absolutePaths = relativePaths.map((p) => path.join(cwd, p))
 
   await promiseMap(validateInputs, absolutePaths)
 
