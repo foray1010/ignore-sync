@@ -3,7 +3,7 @@
 const fs = require('fs')
 const path = require('path')
 
-const isReadable = async dataPath => {
+const isReadable = async (dataPath) => {
   try {
     await fs.promises.access(dataPath, fs.constants.R_OK)
     return true
@@ -13,7 +13,7 @@ const isReadable = async dataPath => {
 }
 exports.isReadable = isReadable
 
-const isDirectory = async dataPath => {
+const isDirectory = async (dataPath) => {
   const stats = await fs.promises.stat(dataPath)
   return stats.isDirectory()
 }
@@ -25,15 +25,15 @@ const overwriteFile = async (filePath, fileStr) => {
 }
 exports.overwriteFile = overwriteFile
 
-const readDir = async absoluteDirPath => {
+const readDir = async (absoluteDirPath) => {
   const relativeDataPaths = await fs.promises.readdir(absoluteDirPath)
-  return relativeDataPaths.map(relativeDataPath => {
+  return relativeDataPaths.map((relativeDataPath) => {
     return path.join(absoluteDirPath, relativeDataPath)
   })
 }
 exports.readDir = readDir
 
-const readFile = async filePath => {
+const readFile = async (filePath) => {
   const fileBuffer = await fs.promises.readFile(filePath)
   return String(fileBuffer)
 }

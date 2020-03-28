@@ -16,17 +16,18 @@ const prependAlert = R.concat([highlightComments(COMMENT_HEADER_ALERT), ''])
 const sourceIs = (...args) => R.compose(...args, R.prop('source'))
 
 const inlineSourceFetcher = R.compose(joinLinesWithEOF, R.prop('data'))
-const githubSourceFetcher = async block => {
+const githubSourceFetcher = async (block) => {
   const [owner, repo] = block.source.split('/')
   const files = await promiseMap(
-    relativePath => github.getContentFile({ owner, repo, path: relativePath }),
+    (relativePath) =>
+      github.getContentFile({ owner, repo, path: relativePath }),
     block.data,
   )
   return joinLinesWithEOF(files)
 }
 const localSourceFetcher = async (block, directory) => {
   const files = await promiseMap(
-    relativeFilePath => readFile(path.join(directory, relativeFilePath)),
+    (relativeFilePath) => readFile(path.join(directory, relativeFilePath)),
     block.data,
   )
   return joinLinesWithEOF(files)
@@ -38,12 +39,12 @@ const generateIgnoreFile = (ignoreSyncFile, directory) => {
       [sourceIs(R.equals('inline')), inlineSourceFetcher],
       [
         sourceIs(R.equals('local')),
-        block => localSourceFetcher(block, directory),
+        (block) => localSourceFetcher(block, directory),
       ],
       [sourceIs(isGithubSource), githubSourceFetcher],
       [
         R.T,
-        block => {
+        (block) => {
           throw new Error(`unknown source: ${block.source}`)
         },
       ],

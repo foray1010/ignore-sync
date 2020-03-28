@@ -24,13 +24,13 @@ const filterDirPaths = R.composeP(
   promiseFilter(isDirectory),
 )
 
-const getGitIgnoreFilter = async directory => {
+const getGitIgnoreFilter = async (directory) => {
   const gitIgnorePath = path.join(directory, '.gitignore')
   const isGitIgnoreReadable = await isReadable(gitIgnorePath)
   if (isGitIgnoreReadable) {
     const gitIgnorePattern = await readFile(gitIgnorePath)
     const gitIgnore = ignore().add(gitIgnorePattern)
-    return absolutePath => {
+    return (absolutePath) => {
       const relativePath =
         path.relative(directory, absolutePath) +
         // keep trailing `path.sep` as gitignore may use it to ignore directories

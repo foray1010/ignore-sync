@@ -29,13 +29,13 @@ yarn.lock
 1. `npm install --save-dev ignore-sync`
 1. update `package.json`
 
-    ```diff json
-    {
-      "scripts": {
-    +   "ignore-sync": "ignore-sync ."
-      }
-    }
-    ```
+   ```diff json
+   {
+     "scripts": {
+   +   "ignore-sync": "ignore-sync ."
+     }
+   }
+   ```
 
 1. now follow [how to use](#how-to-use) to create `*ignore-sync` files, then `npm run ignore-sync`, all corresponding ignore files will be generated.
 
@@ -43,24 +43,24 @@ yarn.lock
 
 1. `ignore-sync` works on any ignore file that name end with `ignore`, such as `.gitignore`, `.npmignore`, `.eslintignore`, etc. Simply creating a file that end with `ignore-sync`.
 
-    example: `.gitignore-sync` -> `.gitignore`
+   example: `.gitignore-sync` -> `.gitignore`
 
 1. create a source tag in your `*ignore-sync` file to identify the source of ignore patterns
 
-    ```ini
-    [put_source_tag_here]
-    ```
+   ```ini
+   [put_source_tag_here]
+   ```
 
-    different source tag identifies different source of ignore patterns
+   different source tag identifies different source of ignore patterns
 
-    - `[inline]`
-        - ignore patterns under this tag will be copied to generated ignore file directly
-    - `[local]`
-        - local file paths under this tag will be read and the content of these files will be copied to generated ignore file
-        - file paths are relative to the location of the `*ignore-sync` file
-    - `[$username/$repo]`
-        - github file paths under this tag will be read and the content of these files will be copied to generated ignore file
-        - file paths are relative to the root of the github repository
-        - recommend using ignore patterns from [[github/gitignore]](https://github.com/github/gitignore)
+   - `[inline]`
+     - ignore patterns under this tag will be copied to generated ignore file directly
+   - `[local]`
+     - local file paths under this tag will be read and the content of these files will be copied to generated ignore file
+     - file paths are relative to the location of the `*ignore-sync` file
+   - `[$username/$repo]`
+     - github file paths under this tag will be read and the content of these files will be copied to generated ignore file
+     - file paths are relative to the root of the github repository
+     - recommend using ignore patterns from [[github/gitignore]](https://github.com/github/gitignore)
 
 1. `npm run ignore-sync`
