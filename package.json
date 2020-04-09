@@ -47,7 +47,7 @@
     "mermaid.cli": "0.5.1",
     "prettier": "2.0.4",
     "remark-cli": "8.0.0",
-    "sort-package-json": "1.40.0"
+    "sort-package-json": "1.41.0"
   },
   "engines": {
     "node": ">=10.13"
