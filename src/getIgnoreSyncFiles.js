@@ -5,6 +5,6 @@ const { readDir } = require('./utils/fsHelper')
 
 const getIgnoreSyncFiles = async (absoluteDirPath) => {
   const absoluteFilePaths = await readDir(absoluteDirPath)
-  return absoluteFilePaths.filter(isIgnoreSyncFile)
+  return absoluteFilePaths.filter((x) => isIgnoreSyncFile(x))
 }
 module.exports = getIgnoreSyncFiles
