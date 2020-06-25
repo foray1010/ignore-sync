@@ -423,19 +423,19 @@
   resolved "https://registry.yarnpkg.com/@commitlint/types/-/types-9.0.1.tgz#df281f0f3d8f3adb10c95e4dd72b16acf41b5400"
   integrity sha512-wo2rHprtDzTHf4tiSxavktJ52ntiwmg7eHNGFLH38G1of8OfGVwOc1sVbpM4jN/HK/rCMhYOi6xzoPqsv0537A==
 
-"@foray1010/common-presets-utils@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@foray1010/common-presets-utils/-/common-presets-utils-2.1.0.tgz#3cb0fddea0ad900727a3553129c79ce73d4b3874"
-  integrity sha512-m7jm0OlO1WlUOvcgQp2nKO1VcUCk0CQATDQ2bLDGWTXRLRjY/cCVpFRHXwbUy2i6eiQsUodL0m7unGXvrgFG9g==
+"@foray1010/common-presets-utils@^2.1.1":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@foray1010/common-presets-utils/-/common-presets-utils-2.1.1.tgz#e1664e5f2eab75fe1ac0656047037dba8abe79b8"
+  integrity sha512-y4r+/JlYyxEsZoxhjIMdZ9/IUSxShPl6qn7Ce0v8DgMKQG+s/uAVKd8NtH6qKIjWbS5Bxo+73YSUaP9+dX1BPA==
   dependencies:
     read-pkg-up "^7.0.0"
 
-"@foray1010/eslint-config@3.2.0":
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/@foray1010/eslint-config/-/eslint-config-3.2.0.tgz#e5cde824ed0046b06cf1b1139f78464011103b16"
-  integrity sha512-SJsCKw1JRVSpqhBsde4NhKAGBEyBko4WZnaD1jmlU5Z6OiNP6f69YtitW+1kpniv69SdXWsE+mxHHuYBQgqK3g==
+"@foray1010/eslint-config@3.4.0":
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/@foray1010/eslint-config/-/eslint-config-3.4.0.tgz#3d6c9b500fbf78ab516894a15a48da32714e60e0"
+  integrity sha512-I9KzsJi71OzfYW8BCPxQFs5GuBUK1PuTLvEY7sPzwg7lgX0NuARN5KW1UVIcM57flNy3nGL7Qz/7mBg6jlOhyQ==
   dependencies:
-    "@foray1010/common-presets-utils" "^2.1.0"
+    "@foray1010/common-presets-utils" "^2.1.1"
     "@typescript-eslint/eslint-plugin" "^3.0.0"
     "@typescript-eslint/parser" "^3.0.0"
     confusing-browser-globals "^1.0.9"
@@ -450,15 +450,15 @@
     eslint-plugin-simple-import-sort "^5.0.0"
     eslint-plugin-testing-library "^3.1.0"
 
-"@foray1010/prettier-config@4.0.1":
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/@foray1010/prettier-config/-/prettier-config-4.0.1.tgz#4ffa5739b1bcfd1896a6a577e53c946c78388bbf"
-  integrity sha512-uhiy45PGuU6Tke/bN+9KVG5NUtB/85DAqcAIiQHqUbsMYnozTZ4rxmR0y4tfeZqrfWoF7XMxiLoebgHiAVpcXQ==
+"@foray1010/prettier-config@4.0.2":
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/@foray1010/prettier-config/-/prettier-config-4.0.2.tgz#e1219928de07dbbd42fab265e3d84f19d685db4d"
+  integrity sha512-euJdlyXaYY6FNWy8pbRUByG0x7+zDCPKM5v2K/45SADdt73PBz+vPz89auSPIWU2GIOmLW5ZPq5YWzXk9x9+OQ==
 
-"@foray1010/remark-preset@3.0.2":
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/@foray1010/remark-preset/-/remark-preset-3.0.2.tgz#cc714c31e7ce923718891ea808e4e2f5927c4c20"
-  integrity sha512-o9nQaCez0SWecK/9CMNQhpP6IwDtlqPGkxaDIjh7O9QZphkLVOCQwH5NTxfEObfvhbmzITe4Cb8+fQ2dyuE2rQ==
+"@foray1010/remark-preset@3.0.3":
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/@foray1010/remark-preset/-/remark-preset-3.0.3.tgz#52d68e9dc7315ef0399d35046d4015e4e22e2e18"
+  integrity sha512-B7sXqV+jhvyhb5sqWwQh1d1RsDYXGu67N8KYCAY2QM8qAA6cT9Vj64JmXQxIepy9i3jC5TQBfc9C5x1S2k+m0A==
   dependencies:
     remark-preset-lint-consistent "^3.0.0"
     remark-preset-lint-markdown-style-guide "^3.0.0"
