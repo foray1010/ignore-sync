@@ -36,7 +36,7 @@
     "@commitlint/cli": "9.0.1",
     "@commitlint/config-conventional": "9.0.1",
     "@foray1010/eslint-config": "3.4.0",
-    "@foray1010/prettier-config": "4.0.2",
+    "@foray1010/prettier-config": "4.1.0",
     "@foray1010/remark-preset": "3.1.0",
     "cross-env": "7.0.2",
     "eslint": "7.4.0",
@@ -46,8 +46,7 @@
     "lint-staged": "10.2.11",
     "mermaid.cli": "0.5.1",
     "prettier": "2.0.5",
-    "remark-cli": "8.0.0",
-    "sort-package-json": "1.44.0"
+    "remark-cli": "8.0.0"
   },
   "engines": {
     "node": ">=10.13"

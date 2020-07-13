@@ -1,19 +1,7 @@
 'use strict'
 
 module.exports = {
-  '*.{json,yaml,yml}': (filenames) => {
-    const commands = []
-
-    filenames
-      .filter((name) => name.endsWith('/package.json'))
-      .forEach((name) => {
-        commands.push(`sort-package-json ${name}`)
-      })
-
-    commands.push(`yarn prettier --write ${filenames.join(' ')}`)
-
-    return commands
-  },
+  '*.{json,yaml,yml}': 'yarn prettier --write',
   '*.js': [
     'yarn prettier --write',
     'yarn eslint --fix',
