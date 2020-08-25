@@ -42,7 +42,7 @@
     "eslint": "7.7.0",
     "glob-exec": "0.1.1",
     "husky": "4.2.5",
-    "jest": "26.4.0",
+    "jest": "26.4.2",
     "lint-staged": "10.2.11",
     "mermaid.cli": "0.5.1",
     "prettier": "2.0.5",
