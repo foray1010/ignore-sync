@@ -45,7 +45,7 @@
     "jest": "26.4.2",
     "lint-staged": "10.2.13",
     "mermaid.cli": "0.5.1",
-    "prettier": "2.0.5",
+    "prettier": "2.1.1",
     "remark-cli": "8.0.1"
   },
   "engines": {
