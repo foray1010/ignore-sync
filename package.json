@@ -33,8 +33,8 @@
     "ramda": "0.27.1"
   },
   "devDependencies": {
-    "@commitlint/cli": "9.1.2",
-    "@commitlint/config-conventional": "9.1.2",
+    "@commitlint/cli": "11.0.0",
+    "@commitlint/config-conventional": "11.0.0",
     "@foray1010/eslint-config": "4.0.1",
     "@foray1010/prettier-config": "4.1.1",
     "@foray1010/remark-preset": "3.2.1",
