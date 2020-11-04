@@ -27,6 +27,13 @@ const githubSourceFetcher = async (block) => {
 }
 const localSourceFetcher = async (block, directory) => {
   const files = await promiseMap(
+    (relativeFilePath) => readFile(path.join(directory, relativeFilePath)),
+    block.data,
+  )
+  return joinLinesWithEOF(files)
+}
+const relativeSourceFetcher = async (block, directory) => {
+  const files = await promiseMap(
     async (relativeFilePath) => {
       const filePath = path.dirname(relativeFilePath)
       const fileContent = await readFile(path.join(directory, relativeFilePath))
@@ -56,6 +63,10 @@ const generateIgnoreFile = (ignoreSyncFile, directory) => {
       [sourceIs(R.equals('inline')), inlineSourceFetcher],
       [
         sourceIs(R.equals('local')),
+        (block) => localSourceFetcher(block, directory),
+      ],
+      [
+        sourceIs(R.equals('relative')),
         (block) => localSourceFetcher(block, directory),
       ],
       [sourceIs(isGithubSource), githubSourceFetcher],
