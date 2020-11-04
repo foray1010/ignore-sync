@@ -67,7 +67,7 @@ const generateIgnoreFile = (ignoreSyncFile, directory) => {
       ],
       [
         sourceIs(R.equals('relative')),
-        (block) => localSourceFetcher(block, directory),
+        (block) => relativeSourceFetcher(block, directory),
       ],
       [sourceIs(isGithubSource), githubSourceFetcher],
       [
