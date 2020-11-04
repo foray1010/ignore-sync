@@ -33,27 +33,28 @@ const localSourceFetcher = async (block, directory) => {
   return joinLinesWithEOF(files)
 }
 const relativeSourceFetcher = async (block, directory) => {
-  const files = await promiseMap(
-    async (relativeFilePath) => {
-      const filePath = path.dirname(relativeFilePath)
-      const fileContent = await readFile(path.join(directory, relativeFilePath))
-      const splittedFileContent = fileContent.split(LINE_BREAK)
-      const edittedFileContent = splittedFileContent.map(line => {
-        if (!line) {
-          return line
-        }
+  const files = await promiseMap(async (relativeFilePath) => {
+    const filePath = path.dirname(relativeFilePath)
+    const fileContent = await readFile(path.join(directory, relativeFilePath))
+    const splittedFileContent = fileContent.split(LINE_BREAK)
+    const edittedFileContent = splittedFileContent.map((line) => {
+      if (!line) {
+        return line
+      }
 
-        if (line.startsWith('!')) {
-          return '!' + path.join(filePath, line.substring(1));
-        }
+      if (line.startsWith('#')) {
+        return line
+      }
 
-        return path.join(filePath, line)
-      })
+      if (line.startsWith('!')) {
+        return '!' + path.join(filePath, line.substring(1))
+      }
 
-      return edittedFileContent.join(LINE_BREAK)
-    },
-    block.data
-  )
+      return path.join(filePath, line)
+    })
+
+    return edittedFileContent.join(LINE_BREAK)
+  }, block.data)
   return joinLinesWithEOF(files)
 }
 
