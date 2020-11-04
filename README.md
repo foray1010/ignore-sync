@@ -54,13 +54,32 @@ yarn.lock
    different source tag identifies different source of ignore patterns
 
    - `[inline]`
-     - ignore patterns under this tag will be copied to generated ignore file directly
+     - the ignore patterns will be copied directly to generated ignore file
    - `[local]`
-     - local file paths under this tag will be read and the content of these files will be copied to generated ignore file
-     - file paths are relative to the location of the `*ignore-sync` file
+     - the content of these local files will be copied directly to generated ignore file
+   - `[relative]`
+
+     - the content of these local files will be copied with **relative path prefix** to generated ignore file
+     - example
+
+       ```ini
+       # input: /packages/a/.prettierignore
+       ignored.md
+       ```
+
+       ```ini
+       # input: /.prettierignore-sync
+       [relative]
+       packages/a/.prettierignore
+       ```
+
+       ```ini
+       # output: /.prettierignore
+       packages/a/ignored.md
+       ```
+
    - `[$username/$repo]`
-     - github file paths under this tag will be read and the content of these files will be copied to generated ignore file
-     - file paths are relative to the root of the github repository
+     - the content of these github files will be downloaded and appended to generated ignore file
      - recommend using ignore patterns from [[github/gitignore]](https://github.com/github/gitignore)
 
 1. `npm run ignore-sync`
