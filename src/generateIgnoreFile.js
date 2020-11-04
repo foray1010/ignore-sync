@@ -7,7 +7,7 @@ const decodeIgnoreSyncFile = require('./decodeIgnoreSyncFile')
 const github = require('./utils/github')
 const highlightComments = require('./utils/highlightComments')
 const joinLinesWithEOF = require('./utils/joinLinesWithEOF')
-const { COMMENT_HEADER_ALERT } = require('./constants')
+const { COMMENT_HEADER_ALERT, LINE_BREAK } = require('./constants')
 const { dynamicComposeP, promiseMap } = require('./utils/ramdaHelper')
 const { readFile } = require('./utils/fsHelper')
 
@@ -32,6 +32,30 @@ const localSourceFetcher = async (block, directory) => {
   )
   return joinLinesWithEOF(files)
 }
+const relativeSourceFetcher = async (block, directory) => {
+  const files = await promiseMap(
+    async (relativeFilePath) => {
+      const filePath = path.dirname(relativeFilePath)
+      const fileContent = await readFile(path.join(directory, relativeFilePath))
+      const splittedFileContent = fileContent.split(LINE_BREAK)
+      const edittedFileContent = splittedFileContent.map(line => {
+        if (!line) {
+          return line
+        }
+
+        if (line.startsWith('!')) {
+          return '!' + path.join(filePath, line.substring(1));
+        }
+
+        return path.join(filePath, line)
+      })
+
+      return edittedFileContent.join(LINE_BREAK)
+    },
+    block.data
+  )
+  return joinLinesWithEOF(files)
+}
 
 const generateIgnoreFile = (ignoreSyncFile, directory) => {
   const fetchIgnorePatternsBySource = promiseMap(
@@ -40,6 +64,10 @@ const generateIgnoreFile = (ignoreSyncFile, directory) => {
       [
         sourceIs(R.equals('local')),
         (block) => localSourceFetcher(block, directory),
+      ],
+      [
+        sourceIs(R.equals('relative')),
+        (block) => relativeSourceFetcher(block, directory),
       ],
       [sourceIs(isGithubSource), githubSourceFetcher],
       [
