@@ -5,7 +5,7 @@ module.exports = {
   '*.js': [
     'yarn prettier --write',
     'yarn eslint --fix',
-    'jest --bail --findRelatedTests --config .jestrc.json',
+    'jest --bail --findRelatedTests',
   ],
   '*.md': (filenames) => {
     return [`yarn prettier --write ${filenames.join(' ')}`, 'yarn remark .']

@@ -25,7 +25,7 @@
     "mermaid": "glob-exec --foreach 'docs/**/*.mmd' -- 'mmdc -i {{file}} -o {{file}}.png'",
     "prettier": "prettier --ignore-path=node_modules/@foray1010/prettier-config/prettierignore",
     "remark": "remark --frail --ignore-path=node_modules/@foray1010/remark-preset/remarkignore --ignore-path-resolve-from=cwd",
-    "test": "cross-env NODE_ENV=test jest --config .jestrc.json"
+    "test": "cross-env NODE_ENV=test jest"
   },
   "dependencies": {
     "axios": "0.21.0",
