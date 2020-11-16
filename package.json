@@ -1,6 +1,6 @@
 {
   "name": "ignore-sync",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "a CLI tool to build and sync *ignore files across files and repositories",
   "keywords": [
     ".dockerignore",

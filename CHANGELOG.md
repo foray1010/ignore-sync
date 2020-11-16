@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.0.1](https://github.com/foray1010/ignore-sync/compare/v3.0.0...v3.0.1) (2020-11-16)
+
+### Bug Fixes
+
+- **relative-tag:** missing \*\* in pattern & generate invalid ignore pattern on Windows ([#308](https://github.com/foray1010/ignore-sync/issues/308)) ([7fd174e](https://github.com/foray1010/ignore-sync/commit/7fd174eff0dbc8378ef8e638ca99014d7c47963b))
+
 ## [3.0.0](https://github.com/foray1010/ignore-sync/compare/v2.0.1...v3.0.0) (2020-11-04)
 
 ### ⚠ BREAKING CHANGES
