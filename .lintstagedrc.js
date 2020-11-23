@@ -1,14 +1,11 @@
 'use strict'
 
 module.exports = {
-  '*.{json,yaml,yml}': 'yarn prettier --write',
-  '*.js': [
+  '*.{cjs,js,mjs,ts,tsx}': [
     'yarn prettier --write',
     'yarn eslint --fix',
     'jest --bail --findRelatedTests',
   ],
-  '*.md': (filenames) => {
-    return [`yarn prettier --write ${filenames.join(' ')}`, 'yarn remark .']
-  },
+  '*.{json,markdown,md,yaml,yml}': 'yarn prettier --write',
   '*.mmd': 'yarn mermaid',
 }
