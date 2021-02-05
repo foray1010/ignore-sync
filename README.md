@@ -57,9 +57,11 @@ yarn.lock
      - the ignore patterns will be copied directly to generated ignore file
    - `[local]`
      - the content of these local files will be copied directly to generated ignore file
+     - support glob pattern, e.g. `packages/**/.gitignore`
    - `[relative]`
 
      - the content of these local files will be copied with **relative path prefix** to generated ignore file
+     - support glob pattern, e.g. `packages/**/.gitignore`
      - example
 
        ```ini

@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "axios": "0.21.1",
+    "fast-glob": "3.2.5",
     "ignore": "5.1.8",
     "ramda": "0.27.1"
   },
