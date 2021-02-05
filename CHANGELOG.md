@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.1.0](https://github.com/foray1010/ignore-sync/compare/v3.0.1...v3.1.0) (2021-02-05)
+
+### Features
+
+- support glob in local and relative source tag ([2a4519a](https://github.com/foray1010/ignore-sync/commit/2a4519a1d0f5b40ad650bba50451115d84b94f24))
+
+### Bug Fixes
+
+- **deps:** update dependency axios to v0.21.1 ([1ef8865](https://github.com/foray1010/ignore-sync/commit/1ef886543d43b4ae3c7950227e1c4f7f2cc7df6a))
+
 ### [3.0.1](https://github.com/foray1010/ignore-sync/compare/v3.0.0...v3.0.1) (2020-11-16)
 
 ### Bug Fixes
