@@ -40,9 +40,9 @@
   "devDependencies": {
     "@commitlint/cli": "11.0.0",
     "@commitlint/config-conventional": "11.0.0",
-    "@foray1010/eslint-config": "4.5.1",
-    "@foray1010/prettier-config": "4.2.0",
-    "@foray1010/remark-preset": "3.4.1",
+    "@foray1010/eslint-config": "4.6.0",
+    "@foray1010/prettier-config": "4.3.0",
+    "@foray1010/remark-preset": "3.4.2",
     "cross-env": "7.0.3",
     "eslint": "7.20.0",
     "glob-exec": "0.1.1",
