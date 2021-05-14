@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.0.0](https://github.com/foray1010/ignore-sync/compare/v3.1.0...v4.0.0) (2021-05-14)
+
+### ⚠ BREAKING CHANGES
+
+- drop node 10
+
+### Bug Fixes
+
+- **windows-paths:** always use posix join on normalized line ([#391](https://github.com/foray1010/ignore-sync/issues/391)) ([ed9c552](https://github.com/foray1010/ignore-sync/commit/ed9c552316c6e14a0b36ae5b77cd62ce1ceb9809))
+
+- drop node 10 ([2b5f11a](https://github.com/foray1010/ignore-sync/commit/2b5f11a7257d84da9e20b450af8fa68763acf785))
+
 ## [3.1.0](https://github.com/foray1010/ignore-sync/compare/v3.0.1...v3.1.0) (2021-02-05)
 
 ### Features
