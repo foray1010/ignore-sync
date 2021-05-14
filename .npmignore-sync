@@ -5,9 +5,8 @@ Global/Linux.gitignore
 Global/Windows.gitignore
 
 [inline]
+__fixtures__/
 __mocks__/
+__tests__/
 .*
 *.test.js
-circle.yml
-docs/
-yarn.lock

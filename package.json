@@ -18,6 +18,10 @@
   "license": "MIT",
   "author": "foray1010",
   "bin": "src/bin.js",
+  "files": [
+    "src",
+    "*.md"
+  ],
   "scripts": {
     "ci": "yarn lint:js && yarn lint:md && yarn test",
     "eslint": "eslint --ext=cjs,js,mjs,ts,tsx --ignore-path=node_modules/@foray1010/eslint-config/eslintignore",

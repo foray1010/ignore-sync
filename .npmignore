@@ -186,9 +186,8 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+__fixtures__/
 __mocks__/
+__tests__/
 .*
 *.test.js
-circle.yml
-docs/
-yarn.lock
