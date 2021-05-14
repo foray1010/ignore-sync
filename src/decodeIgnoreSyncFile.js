@@ -26,7 +26,7 @@ const decodeIgnoreSyncFile = (ignoreSyncFile) => {
     }
 
     if (['local', 'relative'].includes(lastBlock.source)) {
-      const pattern = path.join('.', line)
+      const pattern = path.posix.join('.', line)
       const files = fg.sync([pattern], {
         absolute: false,
         dot: true,
