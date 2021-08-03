@@ -48,7 +48,7 @@
     "@foray1010/prettier-config": "5.0.0",
     "@foray1010/remark-preset": "4.0.0",
     "cross-env": "7.0.3",
-    "eslint": "7.31.0",
+    "eslint": "7.32.0",
     "glob-exec": "0.1.1",
     "husky": "7.0.1",
     "jest": "27.0.6",
