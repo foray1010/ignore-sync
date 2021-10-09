@@ -24,7 +24,7 @@
   ],
   "scripts": {
     "ci": "yarn lint:js && yarn lint:md && yarn test",
-    "eslint": "eslint --ext=cjs,js,mjs,ts,tsx --ignore-path=node_modules/@foray1010/eslint-config/eslintignore",
+    "eslint": "eslint --ext=cjs,cts,js,mjs,mts,ts,tsx --ignore-path=node_modules/@foray1010/eslint-config/eslintignore",
     "postinstall": "husky install",
     "lint:js": "yarn eslint .",
     "lint:md": "yarn remark .",

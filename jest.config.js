@@ -2,10 +2,10 @@
 
 const config = {
   collectCoverage: true,
-  collectCoverageFrom: ['<rootDir>/src/**/*.{cjs,js,mjs,ts,tsx}'],
+  collectCoverageFrom: ['<rootDir>/src/**/*.{cjs,cts,js,mjs,mts,ts,tsx}'],
   coverageReporters: ['lcov', 'text-summary'],
   testEnvironment: 'node',
-  testMatch: ['**/*.{spec,test}.{cjs,js,mjs,ts,tsx}'],
+  testMatch: ['**/*.{spec,test}.{cjs,cts,js,mjs,mts,ts,tsx}'],
 }
 
 module.exports = config
