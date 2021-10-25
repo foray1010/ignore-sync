@@ -50,7 +50,7 @@
     "cross-env": "7.0.3",
     "eslint": "7.32.0",
     "glob-exec": "0.1.1",
-    "husky": "7.0.2",
+    "husky": "7.0.4",
     "jest": "27.3.1",
     "lint-staged": "11.2.3",
     "mermaid.cli": "0.5.1",
