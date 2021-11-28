@@ -55,7 +55,7 @@
     "lint-staged": "12.1.2",
     "mermaid.cli": "0.5.1",
     "pinst": "2.1.6",
-    "prettier": "2.4.1",
+    "prettier": "2.5.0",
     "remark-cli": "10.0.1"
   },
   "engines": {
