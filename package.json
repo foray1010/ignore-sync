@@ -39,7 +39,7 @@
     "axios": "0.24.0",
     "fast-glob": "3.2.10",
     "ignore": "5.2.0",
-    "ramda": "0.27.1"
+    "ramda": "0.27.2"
   },
   "devDependencies": {
     "@commitlint/cli": "16.0.2",
