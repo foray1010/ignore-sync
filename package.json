@@ -52,7 +52,7 @@
     "glob-exec": "0.1.1",
     "husky": "7.0.2",
     "jest": "27.4.7",
-    "lint-staged": "12.3.2",
+    "lint-staged": "12.3.3",
     "mermaid.cli": "0.5.1",
     "pinst": "2.1.6",
     "prettier": "2.5.1",
