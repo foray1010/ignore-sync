@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.0.1](https://github.com/foray1010/ignore-sync/compare/v5.0.0...v5.0.1) (2022-04-07)
+
+### Bug Fixes
+
+- do not lock dependencies ([5145557](https://github.com/foray1010/ignore-sync/commit/51455570f73247db8e62c67ad942dc25b01d4bf5))
+
 ## [5.0.0](https://github.com/foray1010/ignore-sync/compare/v4.0.0...v5.0.0) (2022-04-07)
 
 ### ⚠ BREAKING CHANGES
