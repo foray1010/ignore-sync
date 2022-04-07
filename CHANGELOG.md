@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.0.0](https://github.com/foray1010/ignore-sync/compare/v4.0.0...v5.0.0) (2022-04-07)
+
+### ⚠ BREAKING CHANGES
+
+- only support node ^12.22.0 || ^14.17.0 || >=16.13.0
+
+### Bug Fixes
+
+- **deps:** update dependency axios to v0.21.2 [security] ([0a5e039](https://github.com/foray1010/ignore-sync/commit/0a5e039b6c7e4e6fcbf67a36bf2ac86c3f1ffe80))
+- **deps:** update dependency axios to v0.21.4 ([f9ab2f2](https://github.com/foray1010/ignore-sync/commit/f9ab2f240146e2975b0b3ed51b24fd952fe98ceb))
+- **deps:** update dependency axios to v0.22.0 ([c64500a](https://github.com/foray1010/ignore-sync/commit/c64500a7541546b48d9ef803b96027ff8ba1aa3c))
+- **deps:** update dependency axios to v0.23.0 ([02a8dde](https://github.com/foray1010/ignore-sync/commit/02a8ddeaf8680b1289f2633c6a26b6467267a2c6))
+- **deps:** update dependency axios to v0.24.0 ([d20e2b3](https://github.com/foray1010/ignore-sync/commit/d20e2b3431ffc9fe60af2d37216bd367414ff663))
+- **deps:** update dependency axios to v0.25.0 ([b1c1935](https://github.com/foray1010/ignore-sync/commit/b1c1935f8dc38c92d69153961fb13164bd8c1885))
+- **deps:** update dependency axios to v0.26.0 ([419530d](https://github.com/foray1010/ignore-sync/commit/419530dff12ff51fd6a5d66fb67e3edfa1dba6b6))
+- **deps:** update dependency axios to v0.26.1 ([f01f7a3](https://github.com/foray1010/ignore-sync/commit/f01f7a3cb67139770f8621334dc107b3a1736734))
+- **deps:** update dependency fast-glob to v3.2.10 ([d566e80](https://github.com/foray1010/ignore-sync/commit/d566e80168a274f4b5dfb1e2ca26d9c73df3f1f4))
+- **deps:** update dependency fast-glob to v3.2.11 ([b8e65fe](https://github.com/foray1010/ignore-sync/commit/b8e65fe082e5150ca530764677968a6b8adde451))
+- **deps:** update dependency fast-glob to v3.2.6 ([6190219](https://github.com/foray1010/ignore-sync/commit/6190219691384591de6248fac7a8d07e179a8d98))
+- **deps:** update dependency fast-glob to v3.2.7 ([64011e2](https://github.com/foray1010/ignore-sync/commit/64011e2ec0e969234315907ae1c9dfb81f367b36))
+- **deps:** update dependency ignore to v5.1.9 ([9d739e3](https://github.com/foray1010/ignore-sync/commit/9d739e355cced8a448e4571e95792b4987d750d2))
+- **deps:** update dependency ignore to v5.2.0 ([8788eb7](https://github.com/foray1010/ignore-sync/commit/8788eb7be7f0e65c09eabfbda3df35f701b3572c))
+- **deps:** update dependency ramda to v0.27.2 ([435c2d6](https://github.com/foray1010/ignore-sync/commit/435c2d6911be2605286cdd81bb11bb0c41ccb5b5))
+- **deps:** update dependency ramda to v0.28.0 ([2791564](https://github.com/foray1010/ignore-sync/commit/27915646df32afb7475b7eaec65e508d51fb20a3))
+- ignore unnecessary files in release build ([d59c987](https://github.com/foray1010/ignore-sync/commit/d59c987a28d869bac9b0494dcc909ab16f1b8037))
+
+- bump node version requirement ([c311a06](https://github.com/foray1010/ignore-sync/commit/c311a06fdd535bef9471561f3d2d5c02e34225ea))
+
 ## [4.0.0](https://github.com/foray1010/ignore-sync/compare/v3.1.0...v4.0.0) (2021-05-14)
 
 ### ⚠ BREAKING CHANGES
