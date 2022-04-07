@@ -19,10 +19,10 @@ const filterByGitIgnoreFilters = (absoluteDataPaths, gitIgnoreFilters) => {
   return absoluteDataPaths.filter(R.allPass(gitIgnoreFilters))
 }
 
-const filterDirPaths = R.composeP(
+const filterDirPaths = R.composeWith(R.andThen)([
   R.map(R.concat(R.__, path.sep)),
   promiseFilter(isDirectory),
-)
+])
 
 const getGitIgnoreFilter = async (directory) => {
   const gitIgnorePath = path.join(directory, '.gitignore')
