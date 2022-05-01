@@ -36,7 +36,7 @@
     "test": "cross-env NODE_ENV=test jest"
   },
   "dependencies": {
-    "axios": "~0.26.1",
+    "axios": "0.27.2",
     "fast-glob": "^3.2.11",
     "ignore": "^5.2.0",
     "ramda": "~0.28.0"
