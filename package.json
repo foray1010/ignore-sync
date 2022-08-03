@@ -46,7 +46,7 @@
     "@commitlint/config-conventional": "17.0.3",
     "@foray1010/eslint-config": "7.3.1",
     "@foray1010/prettier-config": "7.0.1",
-    "@foray1010/remark-preset": "6.0.1",
+    "@foray1010/remark-preset": "7.0.0",
     "cross-env": "7.0.3",
     "eslint": "8.20.0",
     "glob-exec": "0.1.1",
