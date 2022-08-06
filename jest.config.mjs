@@ -1,5 +1,3 @@
-'use strict'
-
 const config = {
   collectCoverage: true,
   collectCoverageFrom: ['<rootDir>/src/**/*.{cjs,cts,js,mjs,mts,ts,tsx}'],
@@ -7,5 +5,4 @@ const config = {
   testEnvironment: 'node',
   testMatch: ['**/*.{spec,test}.{cjs,cts,js,mjs,mts,ts,tsx}'],
 }
-
-module.exports = config
+export default config
