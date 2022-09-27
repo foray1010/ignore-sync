@@ -6,6 +6,7 @@ module.exports = {
     'yarn eslint --fix',
     'jest --bail --findRelatedTests --passWithNoTests',
   ],
-  '*.{json,markdown,md,yaml,yml}': 'yarn prettier --write',
+  '*.{json,yaml,yml}': 'yarn prettier --write',
+  '*.{markdown,md}': ['yarn prettier --write', 'yarn remark'],
   '*.mmd': 'yarn mermaid',
 }
