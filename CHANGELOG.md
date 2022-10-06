@@ -6,19 +6,11 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### ⚠ BREAKING CHANGES
 
-- drop node.js v12 and v17
+- drop node.js v12 and v17 ([238cdca](https://github.com/foray1010/ignore-sync/commit/238cdca920d1fdd36497715f9b2675a1adc1a602))
 
 ### Features
 
 - support referencing other ignore-sync files ([00dd0ef](https://github.com/foray1010/ignore-sync/commit/00dd0ef1f862eada9a0028a272cf9dee7815bd96))
-
-### Bug Fixes
-
-- **deps:** pin dependencies ([cfe7a4f](https://github.com/foray1010/ignore-sync/commit/cfe7a4fd126ead6b1f56ce0a9b2374833d518a77))
-- **deps:** update dependency axios to v0.27.2 ([3ba0481](https://github.com/foray1010/ignore-sync/commit/3ba04810be640a7269e3709fc426e36d5d96e3f5))
-- **deps:** update dependency fast-glob to v3.2.12 ([c9768dd](https://github.com/foray1010/ignore-sync/commit/c9768dd2b0d0762e225fe010ce7833ea33a87e44))
-
-- drop node.js v12 and v17 ([238cdca](https://github.com/foray1010/ignore-sync/commit/238cdca920d1fdd36497715f9b2675a1adc1a602))
 
 ### [5.0.1](https://github.com/foray1010/ignore-sync/compare/v5.0.0...v5.0.1) (2022-04-07)
 
