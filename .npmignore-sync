@@ -1,8 +1,8 @@
-[github/gitignore]
-Node.gitignore
-Global/macOS.gitignore
-Global/Linux.gitignore
-Global/Windows.gitignore
+[local]
+.gitignore-sync
+
+[relative]
+./src/.testignore-sync
 
 [inline]
 __fixtures__/

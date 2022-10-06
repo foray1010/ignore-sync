@@ -58,10 +58,12 @@ yarn.lock
    - `[local]`
      - the content of these local files will be copied directly to generated ignore file
      - support glob pattern, e.g. `packages/**/.gitignore`
+     - support referencing other ignore-sync files, e.g. referencing `.gitignore-sync` in `.npmignore-sync`
    - `[relative]`
 
      - the content of these local files will be copied with **relative path prefix** to generated ignore file
      - support glob pattern, e.g. `packages/**/.gitignore`
+     - support referencing other ignore-sync files, e.g. referencing `.gitignore-sync` in `.npmignore-sync`
      - example
 
        ```ini
