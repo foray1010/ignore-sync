@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/package",
   "name": "ignore-sync",
-  "version": "6.0.0",
+  "version": "6.0.1",
   "description": "a CLI tool to build and sync *ignore files across files and repositories",
   "keywords": [
     ".dockerignore",

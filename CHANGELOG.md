@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.0.1](https://github.com/foray1010/ignore-sync/compare/v6.0.0...v6.0.1) (2022-10-06)
+
+### Bug Fixes
+
+- fix a breaking change introduced by axios v1.1.0 ([f4db4eb](https://github.com/foray1010/ignore-sync/commit/f4db4eb49634bcd76b516cdcead36a5f8b392611))
+
 ## [6.0.0](https://github.com/foray1010/ignore-sync/compare/v5.0.1...v6.0.0) (2022-10-06)
 
 ### ⚠ BREAKING CHANGES
