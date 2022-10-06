@@ -1,9 +1,6 @@
 [local]
 .gitignore-sync
 
-[relative]
-./src/.testignore-sync
-
 [inline]
 __fixtures__/
 __mocks__/

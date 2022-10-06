@@ -200,8 +200,6 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-
-
 __fixtures__/
 __mocks__/
 __tests__/
