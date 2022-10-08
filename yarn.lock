@@ -495,19 +495,19 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
-"@foray1010/common-presets-utils@^5.0.4":
-  version "5.0.4"
-  resolved "https://registry.yarnpkg.com/@foray1010/common-presets-utils/-/common-presets-utils-5.0.4.tgz#837e3ba52cd3a30d3c2a434f3ca8299b075e48c5"
-  integrity sha512-i1Ux/x1/kAZK4/gycMBf+up0drEOpPVAW9zOYruiIn0X6IfPf/yRYP+GRF7yNecRh6ry7Z4NFwQ7USxjhMZHIA==
+"@foray1010/common-presets-utils@^5.1.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@foray1010/common-presets-utils/-/common-presets-utils-5.1.0.tgz#6addd123b538f0002f5b93ca8f8e71d93db254be"
+  integrity sha512-2kg+Uj0l9FprZjy5SVDSo6puHQhgNu0SKtVBSGCWdMZBXs3bUajcnMmi0S++/5e+no2vykOEhFT+1N9aWFuJjg==
   dependencies:
     read-pkg-up "^7.0.1"
 
-"@foray1010/eslint-config@7.8.0":
-  version "7.8.0"
-  resolved "https://registry.yarnpkg.com/@foray1010/eslint-config/-/eslint-config-7.8.0.tgz#43f8cdd8d5b06a8fe0dd00ee8030afcd2d631f3f"
-  integrity sha512-aBp40zFcXSj4WRpgLXTdSpgrlQ4pxrrPnW9mUbfnbF/kbjsKTnYK/VRpKgcIb4B30oqdLt8tRY+MR3gXTZM1/g==
+"@foray1010/eslint-config@7.9.0":
+  version "7.9.0"
+  resolved "https://registry.yarnpkg.com/@foray1010/eslint-config/-/eslint-config-7.9.0.tgz#694c0713f9af5ae298df219888fb4520d6a289c9"
+  integrity sha512-jjGBQ2IkxT0wCRwYUKpRu5+ZZSK1V3LSzu35zLqa9JACtMA6frwuNNzpOXi7vQjjV5FG3DeH6FcMrgQA/SN/ig==
   dependencies:
-    "@foray1010/common-presets-utils" "^5.0.4"
+    "@foray1010/common-presets-utils" "^5.1.0"
     "@typescript-eslint/eslint-plugin" "^5.38.1"
     "@typescript-eslint/parser" "^5.38.1"
     confusing-browser-globals "^1.0.10"
