@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Bug Fixes
 
-- fix a breaking change introduced by axios v1.1.2 ([ec435d2](https://github.com/foray1010/ignore-sync/commit/ec435d2c213c53bd0a984c6cf79b2edf7c1858cb)), closes [/github.com/axios/axios/issues/5038#issuecomment-1272244005](https://github.com/foray1010//github.com/axios/axios/issues/5038/issues/issuecomment-1272244005)
+- fix a breaking change introduced by axios v1.1.2 ([ec435d2](https://github.com/foray1010/ignore-sync/commit/ec435d2c213c53bd0a984c6cf79b2edf7c1858cb))
 
 ### [6.0.1](https://github.com/foray1010/ignore-sync/compare/v6.0.0...v6.0.1) (2022-10-06)
 
