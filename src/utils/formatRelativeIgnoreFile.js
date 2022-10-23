@@ -1,6 +1,4 @@
-'use strict'
-
-const { LINE_BREAK } = require('../constants.json')
+import { LINE_BREAK } from '../constants.js'
 
 const prependRelativePath = (pattern, relativeDir) => {
   if (pattern.startsWith('!')) {
@@ -18,7 +16,7 @@ const prependRelativePath = (pattern, relativeDir) => {
   return [relativeDir, '**', pattern].join('/')
 }
 
-module.exports = function formatRelativeIgnoreFile(fileContent, relativeDir) {
+export default function formatRelativeIgnoreFile(fileContent, relativeDir) {
   const splittedFileContent = fileContent.split(LINE_BREAK)
 
   const edittedFileContent = splittedFileContent.map((line) => {

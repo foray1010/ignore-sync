@@ -1,10 +1,8 @@
 #!/usr/bin/env node
 
-'use strict'
+import process from 'process'
 
-const process = require('process')
-
-const app = require('./app.js')
+import app from './app.js'
 
 const cwd = process.cwd()
 const paths = process.argv.slice(2)

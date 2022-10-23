@@ -1,12 +1,10 @@
-'use strict'
+import path from 'path'
 
-const path = require('path')
-
-const isIgnoreSyncFile = require('./isIgnoreSyncFile.js')
-const processDirectory = require('./processDirectory.js')
-const processIgnoreSyncFile = require('./processIgnoreSyncFile.js')
-const { isDirectory } = require('./utils/fsHelper.js')
-const { promiseMap } = require('./utils/ramdaHelper.js')
+import isIgnoreSyncFile from './isIgnoreSyncFile.js'
+import processDirectory from './processDirectory.js'
+import processIgnoreSyncFile from './processIgnoreSyncFile.js'
+import { isDirectory } from './utils/fsHelper.js'
+import { promiseMap } from './utils/ramdaHelper.js'
 
 const validateInputs = async (absolutePath) => {
   const isDir = await isDirectory(absolutePath)
@@ -31,4 +29,4 @@ const startApp = async (cwd, relativePaths) => {
     }
   }
 }
-module.exports = startApp
+export default startApp

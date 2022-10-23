@@ -1,7 +1,5 @@
-'use strict'
-
-const path = require('path')
-const R = require('ramda')
+import path from 'path'
+import * as R from 'ramda'
 
 const isIgnoreSyncFile = R.compose(R.test(/.+ignore-sync$/), path.basename)
-module.exports = isIgnoreSyncFile
+export default isIgnoreSyncFile

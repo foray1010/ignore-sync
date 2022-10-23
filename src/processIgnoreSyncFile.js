@@ -1,10 +1,8 @@
-'use strict'
+import path from 'path'
 
-const path = require('path')
-
-const generateIgnoreFile = require('./generateIgnoreFile.js')
-const renameIgnoreFile = require('./renameIgnoreFile.js')
-const { overwriteFile, readFile } = require('./utils/fsHelper.js')
+import generateIgnoreFile from './generateIgnoreFile.js'
+import renameIgnoreFile from './renameIgnoreFile.js'
+import { overwriteFile, readFile } from './utils/fsHelper.js'
 
 const processIgnoreSyncFile = async (absoluteFilePath) => {
   const ignoreSyncFile = await readFile(absoluteFilePath)
@@ -17,4 +15,4 @@ const processIgnoreSyncFile = async (absoluteFilePath) => {
 
   await overwriteFile(ignoreFilePath, ignoreFile)
 }
-module.exports = processIgnoreSyncFile
+export default processIgnoreSyncFile

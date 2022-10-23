@@ -1,10 +1,8 @@
-'use strict'
+import fg from 'fast-glob'
+import path from 'path'
 
-const fg = require('fast-glob')
-const path = require('path')
-
-const cleanupIgnoreSyncFile = require('./cleanupIgnoreSyncFile.js')
-const { LINE_BREAK } = require('./constants.json')
+import cleanupIgnoreSyncFile from './cleanupIgnoreSyncFile.js'
+import { LINE_BREAK } from './constants.js'
 
 const decodeIgnoreSyncFile = (ignoreSyncFile) => {
   const normalizedIgnoreSyncFile = cleanupIgnoreSyncFile(ignoreSyncFile)
@@ -50,4 +48,4 @@ const decodeIgnoreSyncFile = (ignoreSyncFile) => {
     ]
   }, [])
 }
-module.exports = decodeIgnoreSyncFile
+export default decodeIgnoreSyncFile

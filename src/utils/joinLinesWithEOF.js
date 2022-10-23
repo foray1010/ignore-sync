@@ -1,11 +1,9 @@
-'use strict'
+import * as R from 'ramda'
 
-const R = require('ramda')
-
-const { LINE_BREAK } = require('../constants.json')
+import { LINE_BREAK } from '../constants.js'
 
 const joinLinesWithEOF = R.compose(
   R.replace(RegExp(LINE_BREAK + '*$'), LINE_BREAK),
   R.join(LINE_BREAK),
 )
-module.exports = joinLinesWithEOF
+export default joinLinesWithEOF

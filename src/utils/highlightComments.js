@@ -1,8 +1,6 @@
-'use strict'
+import * as R from 'ramda'
 
-const R = require('ramda')
-
-const { COMMENT_CHAR, LINE_BREAK } = require('../constants.json')
+import { COMMENT_CHAR, LINE_BREAK } from '../constants.js'
 
 const spacing = ' '
 const leftPad = COMMENT_CHAR + spacing
@@ -23,4 +21,4 @@ const highlightComments = (commentStr) => {
 
   return [verticalPad, ...paddedComments, verticalPad].join(LINE_BREAK)
 }
-module.exports = highlightComments
+export default highlightComments

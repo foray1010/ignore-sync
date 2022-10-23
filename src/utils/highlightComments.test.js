@@ -1,6 +1,4 @@
-'use strict'
-
-const highlightComments = require('./highlightComments.js')
+import highlightComments from './highlightComments.js'
 
 describe('highlightComments', () => {
   test('should add # correctly', () => {

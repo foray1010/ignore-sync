@@ -1,17 +1,15 @@
-'use strict'
+import path from 'path'
+import * as R from 'ramda'
 
-const path = require('path')
-const R = require('ramda')
-
-const decodeIgnoreSyncFile = require('./decodeIgnoreSyncFile.js')
-const formatRelativeIgnoreFile = require('./utils/formatRelativeIgnoreFile.js')
-const github = require('./utils/github.js')
-const highlightComments = require('./utils/highlightComments.js')
-const isIgnoreSyncFile = require('./isIgnoreSyncFile.js')
-const joinLinesWithEOF = require('./utils/joinLinesWithEOF.js')
-const { COMMENT_HEADER_ALERT } = require('./constants.json')
-const { dynamicComposeP, promiseMap } = require('./utils/ramdaHelper.js')
-const { readFile } = require('./utils/fsHelper.js')
+import { COMMENT_HEADER_ALERT } from './constants.js'
+import decodeIgnoreSyncFile from './decodeIgnoreSyncFile.js'
+import isIgnoreSyncFile from './isIgnoreSyncFile.js'
+import formatRelativeIgnoreFile from './utils/formatRelativeIgnoreFile.js'
+import { readFile } from './utils/fsHelper.js'
+import { getGitHubContentFile } from './utils/github.js'
+import highlightComments from './utils/highlightComments.js'
+import joinLinesWithEOF from './utils/joinLinesWithEOF.js'
+import { dynamicComposeP, promiseMap } from './utils/ramdaHelper.js'
 
 const isGithubSource = R.test(/^(\w+\/\w+)$/i)
 const prependAlert = R.concat([highlightComments(COMMENT_HEADER_ALERT), ''])
@@ -22,7 +20,7 @@ const githubSourceFetcher = async (block) => {
   const [owner, repo] = block.source.split('/')
   const files = await Promise.all(
     block.data.map((relativeFilePath) => {
-      return github.getContentFile({ owner, repo, path: relativeFilePath })
+      return getGitHubContentFile({ owner, repo, path: relativeFilePath })
     }),
   )
   return joinLinesWithEOF(files)
@@ -102,4 +100,4 @@ const generateIgnoreFile = (
     decodeIgnoreSyncFile,
   )(ignoreSyncFile)
 }
-module.exports = generateIgnoreFile
+export default generateIgnoreFile

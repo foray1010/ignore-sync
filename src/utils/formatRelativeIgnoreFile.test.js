@@ -1,6 +1,4 @@
-'use strict'
-
-const formatRelativeIgnoreFile = require('./formatRelativeIgnoreFile.js')
+import formatRelativeIgnoreFile from './formatRelativeIgnoreFile.js'
 
 describe('formatRelativeIgnoreFile', () => {
   const relativeDir = 'output'

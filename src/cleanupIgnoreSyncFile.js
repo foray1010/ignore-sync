@@ -1,8 +1,6 @@
-'use strict'
+import * as R from 'ramda'
 
-const R = require('ramda')
-
-const { COMMENT_CHAR, LINE_BREAK } = require('./constants.json')
+import { COMMENT_CHAR, LINE_BREAK } from './constants.js'
 
 const removeEmptyLines = R.reject((line) => line === '')
 const removeTrailingSpacesAndComment = R.replace(
@@ -16,4 +14,4 @@ const cleanupIgnoreSyncFile = R.compose(
   R.map(removeTrailingSpacesAndComment),
   R.split(LINE_BREAK),
 )
-module.exports = cleanupIgnoreSyncFile
+export default cleanupIgnoreSyncFile

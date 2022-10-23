@@ -1,8 +1,6 @@
-'use strict'
+import axios from 'axios'
 
-const axios = require('axios')
-
-const getContentFile = async ({
+export const getGitHubContentFile = async ({
   owner,
   path,
   ref = 'master', // commit/branch/tag
@@ -13,4 +11,3 @@ const getContentFile = async ({
   )
   return file
 }
-exports.getContentFile = getContentFile

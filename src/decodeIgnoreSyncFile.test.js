@@ -1,6 +1,4 @@
-'use strict'
-
-const decodeIgnoreSyncFile = require('./decodeIgnoreSyncFile.js')
+import decodeIgnoreSyncFile from './decodeIgnoreSyncFile.js'
 
 describe('decodeIgnoreSyncFile', () => {
   const currentDir = '.'

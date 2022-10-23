@@ -17,21 +17,22 @@
   "repository": "https://github.com/foray1010/ignore-sync",
   "license": "MIT",
   "author": "foray1010",
+  "type": "module",
   "bin": "src/bin.js",
   "files": [
     "src",
     "*.md"
   ],
   "scripts": {
-    "ci": "yarn lint:js && yarn lint:md && yarn test",
+    "ci": "yarn lint:js && yarn lint:md && yarn jest",
     "eslint": "eslint --ext=cjs,cts,js,mjs,mts,ts,tsx --ignore-path=node_modules/@foray1010/eslint-config/eslintignore",
+    "jest": "cross-env NODE_ENV=test node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "lint:js": "yarn eslint .",
     "lint:md": "yarn remark .",
     "mermaid": "glob-exec --foreach 'docs/**/*.mmd' -- 'mmdc -i {{file}} -o {{file}}.png'",
     "prepare": "husky install",
     "prettier": "prettier --ignore-path=node_modules/@foray1010/prettier-config/prettierignore",
-    "remark": "remark --frail --ignore-path=node_modules/@foray1010/remark-preset/remarkignore --ignore-path-resolve-from=cwd --silently-ignore",
-    "test": "cross-env NODE_ENV=test jest"
+    "remark": "remark --frail --ignore-path=node_modules/@foray1010/remark-preset/remarkignore --ignore-path-resolve-from=cwd --silently-ignore"
   },
   "dependencies": {
     "axios": "1.1.3",

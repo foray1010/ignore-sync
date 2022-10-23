@@ -1,18 +1,11 @@
-'use strict'
+import ignore from 'ignore'
+import path from 'path'
+import * as R from 'ramda'
 
-const ignore = require('ignore')
-const path = require('path')
-const R = require('ramda')
-
-const getIgnoreSyncFiles = require('./getIgnoreSyncFiles.js')
-const processIgnoreSyncFile = require('./processIgnoreSyncFile.js')
-const {
-  isDirectory,
-  isReadable,
-  readDir,
-  readFile,
-} = require('./utils/fsHelper.js')
-const { promiseFilter, promiseMap } = require('./utils/ramdaHelper.js')
+import getIgnoreSyncFiles from './getIgnoreSyncFiles.js'
+import processIgnoreSyncFile from './processIgnoreSyncFile.js'
+import { isDirectory, isReadable, readDir, readFile } from './utils/fsHelper.js'
+import { promiseFilter, promiseMap } from './utils/ramdaHelper.js'
 
 const filterByGitIgnoreFilters = (absoluteDataPaths, gitIgnoreFilters) => {
   if (gitIgnoreFilters.length === 0) return absoluteDataPaths
@@ -63,4 +56,4 @@ const processDirectory = async (directories, gitIgnoreFilters = []) => {
     processDirectory(filteredDirPaths, updatedGitIgnoreFilters)
   }
 }
-module.exports = processDirectory
+export default processDirectory

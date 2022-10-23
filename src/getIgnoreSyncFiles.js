@@ -1,10 +1,8 @@
-'use strict'
-
-const isIgnoreSyncFile = require('./isIgnoreSyncFile.js')
-const { readDir } = require('./utils/fsHelper.js')
+import isIgnoreSyncFile from './isIgnoreSyncFile.js'
+import { readDir } from './utils/fsHelper.js'
 
 const getIgnoreSyncFiles = async (absoluteDirPath) => {
   const absoluteFilePaths = await readDir(absoluteDirPath)
   return absoluteFilePaths.filter((x) => isIgnoreSyncFile(x))
 }
-module.exports = getIgnoreSyncFiles
+export default getIgnoreSyncFiles
