@@ -20,10 +20,6 @@ Global/macOS.gitignore
 yarn.lock
 ```
 
-## prerequisite
-
-`node >= 7.6`
-
 ## installation and setup
 
 1. `npm install --save-dev ignore-sync`
