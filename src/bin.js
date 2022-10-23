@@ -4,7 +4,7 @@
 
 const process = require('process')
 
-const app = require('./app')
+const app = require('./app.js')
 
 const cwd = process.cwd()
 const paths = process.argv.slice(2)

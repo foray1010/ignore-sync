@@ -1,7 +1,7 @@
 'use strict'
 
-const isIgnoreSyncFile = require('./isIgnoreSyncFile')
-const { readDir } = require('./utils/fsHelper')
+const isIgnoreSyncFile = require('./isIgnoreSyncFile.js')
+const { readDir } = require('./utils/fsHelper.js')
 
 const getIgnoreSyncFiles = async (absoluteDirPath) => {
   const absoluteFilePaths = await readDir(absoluteDirPath)

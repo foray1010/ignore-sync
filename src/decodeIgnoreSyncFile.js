@@ -3,8 +3,8 @@
 const fg = require('fast-glob')
 const path = require('path')
 
-const cleanupIgnoreSyncFile = require('./cleanupIgnoreSyncFile')
-const { LINE_BREAK } = require('./constants')
+const cleanupIgnoreSyncFile = require('./cleanupIgnoreSyncFile.js')
+const { LINE_BREAK } = require('./constants.json')
 
 const decodeIgnoreSyncFile = (ignoreSyncFile) => {
   const normalizedIgnoreSyncFile = cleanupIgnoreSyncFile(ignoreSyncFile)

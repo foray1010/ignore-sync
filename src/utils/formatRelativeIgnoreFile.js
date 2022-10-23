@@ -1,6 +1,6 @@
 'use strict'
 
-const { LINE_BREAK } = require('../constants')
+const { LINE_BREAK } = require('../constants.json')
 
 const prependRelativePath = (pattern, relativeDir) => {
   if (pattern.startsWith('!')) {

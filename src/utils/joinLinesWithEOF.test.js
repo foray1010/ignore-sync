@@ -1,6 +1,6 @@
 'use strict'
 
-const joinLinesWithEOF = require('./joinLinesWithEOF')
+const joinLinesWithEOF = require('./joinLinesWithEOF.js')
 
 describe('joinLinesWithEOF', () => {
   test('should join lines with EOF', () => {

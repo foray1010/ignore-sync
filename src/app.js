@@ -2,11 +2,11 @@
 
 const path = require('path')
 
-const isIgnoreSyncFile = require('./isIgnoreSyncFile')
-const processDirectory = require('./processDirectory')
-const processIgnoreSyncFile = require('./processIgnoreSyncFile')
-const { isDirectory } = require('./utils/fsHelper')
-const { promiseMap } = require('./utils/ramdaHelper')
+const isIgnoreSyncFile = require('./isIgnoreSyncFile.js')
+const processDirectory = require('./processDirectory.js')
+const processIgnoreSyncFile = require('./processIgnoreSyncFile.js')
+const { isDirectory } = require('./utils/fsHelper.js')
+const { promiseMap } = require('./utils/ramdaHelper.js')
 
 const validateInputs = async (absolutePath) => {
   const isDir = await isDirectory(absolutePath)

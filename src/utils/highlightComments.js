@@ -2,7 +2,7 @@
 
 const R = require('ramda')
 
-const { COMMENT_CHAR, LINE_BREAK } = require('../constants')
+const { COMMENT_CHAR, LINE_BREAK } = require('../constants.json')
 
 const spacing = ' '
 const leftPad = COMMENT_CHAR + spacing

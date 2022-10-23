@@ -1,6 +1,6 @@
 'use strict'
 
-const cleanupIgnoreSyncFile = require('./cleanupIgnoreSyncFile')
+const cleanupIgnoreSyncFile = require('./cleanupIgnoreSyncFile.js')
 
 describe('cleanupIgnoreSyncFile', () => {
   test('should remove comments', () => {

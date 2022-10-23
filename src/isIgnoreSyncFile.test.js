@@ -1,6 +1,6 @@
 'use strict'
 
-const isIgnoreSyncFile = require('./isIgnoreSyncFile')
+const isIgnoreSyncFile = require('./isIgnoreSyncFile.js')
 
 describe('isIgnoreSyncFile', () => {
   test('return true when filename end with .+ignore-sync', () => {

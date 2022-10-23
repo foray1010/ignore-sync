@@ -2,9 +2,9 @@
 
 const path = require('path')
 
-const generateIgnoreFile = require('./generateIgnoreFile')
-const renameIgnoreFile = require('./renameIgnoreFile')
-const { overwriteFile, readFile } = require('./utils/fsHelper')
+const generateIgnoreFile = require('./generateIgnoreFile.js')
+const renameIgnoreFile = require('./renameIgnoreFile.js')
+const { overwriteFile, readFile } = require('./utils/fsHelper.js')
 
 const processIgnoreSyncFile = async (absoluteFilePath) => {
   const ignoreSyncFile = await readFile(absoluteFilePath)

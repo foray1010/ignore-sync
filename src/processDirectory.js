@@ -4,15 +4,15 @@ const ignore = require('ignore')
 const path = require('path')
 const R = require('ramda')
 
-const getIgnoreSyncFiles = require('./getIgnoreSyncFiles')
-const processIgnoreSyncFile = require('./processIgnoreSyncFile')
+const getIgnoreSyncFiles = require('./getIgnoreSyncFiles.js')
+const processIgnoreSyncFile = require('./processIgnoreSyncFile.js')
 const {
   isDirectory,
   isReadable,
   readDir,
   readFile,
-} = require('./utils/fsHelper')
-const { promiseFilter, promiseMap } = require('./utils/ramdaHelper')
+} = require('./utils/fsHelper.js')
+const { promiseFilter, promiseMap } = require('./utils/ramdaHelper.js')
 
 const filterByGitIgnoreFilters = (absoluteDataPaths, gitIgnoreFilters) => {
   if (gitIgnoreFilters.length === 0) return absoluteDataPaths
