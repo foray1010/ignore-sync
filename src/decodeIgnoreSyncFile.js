@@ -1,5 +1,6 @@
+import path from 'node:path'
+
 import fg from 'fast-glob'
-import path from 'path'
 
 import cleanupIgnoreSyncFile from './cleanupIgnoreSyncFile.js'
 import { LINE_BREAK } from './constants.js'

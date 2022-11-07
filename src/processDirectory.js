@@ -1,5 +1,6 @@
+import path from 'node:path'
+
 import ignore from 'ignore'
-import path from 'path'
 import * as R from 'ramda'
 
 import getIgnoreSyncFiles from './getIgnoreSyncFiles.js'

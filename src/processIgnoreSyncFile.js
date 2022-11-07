@@ -1,4 +1,4 @@
-import path from 'path'
+import path from 'node:path'
 
 import generateIgnoreFile from './generateIgnoreFile.js'
 import renameIgnoreFile from './renameIgnoreFile.js'

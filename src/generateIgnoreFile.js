@@ -1,4 +1,5 @@
-import path from 'path'
+import path from 'node:path'
+
 import * as R from 'ramda'
 
 import { COMMENT_HEADER_ALERT } from './constants.js'

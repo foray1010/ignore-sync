@@ -1,4 +1,4 @@
-import path from 'path'
+import path from 'node:path'
 
 import isIgnoreSyncFile from './isIgnoreSyncFile.js'
 import processDirectory from './processDirectory.js'

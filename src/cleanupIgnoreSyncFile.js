@@ -4,7 +4,7 @@ import { COMMENT_CHAR, LINE_BREAK } from './constants.js'
 
 const removeEmptyLines = R.reject((line) => line === '')
 const removeTrailingSpacesAndComment = R.replace(
-  RegExp(`\\s*(${COMMENT_CHAR}.*)?$`),
+  new RegExp(`\\s*(${COMMENT_CHAR}.*)?$`),
   '',
 )
 

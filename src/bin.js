@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import process from 'process'
+import process from 'node:process'
 
 import app from './app.js'
 
