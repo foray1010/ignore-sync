@@ -51,7 +51,7 @@
     "eslint": "8.34.0",
     "glob-exec": "0.1.1",
     "husky": "8.0.3",
-    "jest": "29.4.2",
+    "jest": "29.4.3",
     "lint-staged": "13.1.2",
     "mermaid.cli": "0.5.1",
     "node-notifier": "10.0.1",
