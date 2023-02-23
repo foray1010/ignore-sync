@@ -41,8 +41,8 @@
     "ramda": "^0.28.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "17.4.3",
-    "@commitlint/config-conventional": "17.4.3",
+    "@commitlint/cli": "17.4.4",
+    "@commitlint/config-conventional": "17.4.4",
     "@foray1010/eslint-config": "9.1.0",
     "@foray1010/jest-preset": "3.0.0",
     "@foray1010/prettier-config": "8.0.0",
