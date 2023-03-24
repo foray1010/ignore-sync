@@ -25,7 +25,7 @@
   ],
   "scripts": {
     "ci": "yarn lint:js && yarn lint:md && yarn jest",
-    "eslint": "eslint --ext=cjs,cts,js,mjs,mts,ts,tsx --ignore-path=node_modules/@foray1010/eslint-config/eslintignore",
+    "eslint": "ESLINT_USE_FLAT_CONFIG=true eslint --config eslint.config.mjs",
     "jest": "cross-env NODE_ENV=test node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "lint:js": "yarn eslint .",
     "lint:md": "yarn remark .",
@@ -43,10 +43,10 @@
   "devDependencies": {
     "@commitlint/cli": "17.4.4",
     "@commitlint/config-conventional": "17.4.4",
-    "@foray1010/eslint-config": "9.2.0",
-    "@foray1010/jest-preset": "3.0.0",
-    "@foray1010/prettier-config": "8.0.1",
-    "@foray1010/remark-preset": "8.0.0",
+    "@foray1010/eslint-config": "10.0.5",
+    "@foray1010/jest-preset": "4.0.0",
+    "@foray1010/prettier-config": "9.0.0",
+    "@foray1010/remark-preset": "9.0.0",
     "cross-env": "7.0.3",
     "eslint": "8.36.0",
     "glob-exec": "0.1.1",
@@ -55,7 +55,7 @@
     "lint-staged": "13.2.0",
     "mermaid.cli": "0.5.1",
     "node-notifier": "10.0.1",
-    "prettier": "2.8.4",
+    "prettier": "2.8.7",
     "remark-cli": "11.0.0"
   },
   "engines": {
