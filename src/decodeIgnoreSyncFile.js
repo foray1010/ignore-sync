@@ -19,7 +19,7 @@ const decodeIgnoreSyncFile = (ignoreSyncFile) => {
       ]
     }
 
-    const lastBlock = blocks[blocks.length - 1]
+    const lastBlock = blocks.at(-1)
     if (!lastBlock) {
       throw new Error('source `[]` not found before ignore pattern is found')
     }

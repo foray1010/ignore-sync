@@ -13,7 +13,7 @@ export const isReadable = async (dataPath) => {
   try {
     await fsAccess(dataPath, fs.constants.R_OK)
     return true
-  } catch (err) {
+  } catch {
     return false
   }
 }

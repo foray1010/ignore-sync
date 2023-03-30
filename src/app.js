@@ -22,11 +22,9 @@ const startApp = async (cwd, relativePaths) => {
 
   for (const absolutePath of absolutePaths) {
     const isDir = await isDirectory(absolutePath)
-    if (isDir) {
-      await processDirectory([absolutePath])
-    } else {
-      await processIgnoreSyncFile(absolutePath)
-    }
+    await (isDir
+      ? processDirectory([absolutePath])
+      : processIgnoreSyncFile(absolutePath))
   }
 }
 export default startApp

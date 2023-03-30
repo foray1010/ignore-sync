@@ -30,13 +30,11 @@ const localSourceFetcher = async (block, directory) => {
   const files = await Promise.all(
     block.data.map(async (relativeFilePath) => {
       const fileContent = await readFile(path.join(directory, relativeFilePath))
-      if (isIgnoreSyncFile(relativeFilePath)) {
-        return generateIgnoreFile(fileContent, directory, {
-          isRootIgnoreSyncFile: false,
-        })
-      } else {
-        return fileContent
-      }
+      return isIgnoreSyncFile(relativeFilePath)
+        ? generateIgnoreFile(fileContent, directory, {
+            isRootIgnoreSyncFile: false,
+          })
+        : fileContent
     }),
   )
   return joinLinesWithEOF(files)

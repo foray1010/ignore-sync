@@ -2,11 +2,11 @@ import { LINE_BREAK } from '../constants.js'
 
 const prependRelativePath = (pattern, relativeDir) => {
   if (pattern.startsWith('!')) {
-    return '!' + prependRelativePath(pattern.substring(1), relativeDir)
+    return '!' + prependRelativePath(pattern.slice(1), relativeDir)
   }
 
   if (pattern.startsWith('/')) {
-    return [relativeDir, pattern.substring(1)].join('/')
+    return [relativeDir, pattern.slice(1)].join('/')
   }
 
   if (pattern.includes('/') && pattern.indexOf('/') !== pattern.length - 1) {
