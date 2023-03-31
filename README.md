@@ -2,7 +2,7 @@
 
 a cli tool to build and sync \*ignore files across files and repositories
 
-## why
+## Why
 
 1. Github default `.gitignore` doesn't cover all our needs, we always need to compose and manage multiple `.gitignore` files from github, such as [Node.gitignore](https://github.com/github/gitignore/blob/master/Node.gitignore) + [macOS.gitignore](https://github.com/github/gitignore/blob/master/Global/macOS.gitignore), in order to remove all the noises in our development. It should be automated.
 
@@ -20,7 +20,7 @@ Global/macOS.gitignore
 yarn.lock
 ```
 
-## installation and setup
+## Installation and setup
 
 1. `npm install --save-dev ignore-sync`
 1. update `package.json`
@@ -35,7 +35,15 @@ yarn.lock
 
 1. now follow [how to use](#how-to-use) to create `*ignore-sync` files, then `npm run ignore-sync`, all corresponding ignore files will be generated.
 
-## how to use
+## Development Setup
+
+We are using [corepack](https://nodejs.org/api/corepack.html) to manage the `yarn` version
+
+```bash
+corepack enable
+```
+
+## How to use
 
 1. `ignore-sync` works on any ignore file that name end with `ignore`, such as `.gitignore`, `.npmignore`, `.eslintignore`, etc. Simply creating a file that end with `ignore-sync`.
 
