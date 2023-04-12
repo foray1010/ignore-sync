@@ -25,10 +25,9 @@
   ],
   "scripts": {
     "ci": "yarn lint:js && yarn lint:md && yarn jest",
-    "eslint": "ESLINT_USE_FLAT_CONFIG=true eslint --config eslint.config.mjs",
     "postinstall": "husky install",
     "jest": "cross-env NODE_ENV=test node --experimental-vm-modules node_modules/jest/bin/jest.js",
-    "lint:js": "yarn eslint .",
+    "lint:js": "eslint .",
     "lint:md": "yarn remark .",
     "mermaid": "glob-exec --foreach 'docs/**/*.mmd' -- 'mmdc -i {{file}} -o {{file}}.png'",
     "prepack": "pinst --disable",
