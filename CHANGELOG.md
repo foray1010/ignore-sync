@@ -6,28 +6,12 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### ⚠ BREAKING CHANGES
 
-- require node `^16.14.0 || >=18.12.0`
-- drop nodejs 14.17 and 18.11
+- require node `^16.14.0 || >=18.12.0` ([a09d957](https://github.com/foray1010/ignore-sync/commit/a09d957650e56bdfcf651192525eb5b5b5645706))
+- drop nodejs 14.17 and 18.11 ([3db126f](https://github.com/foray1010/ignore-sync/commit/3db126f9f8d72d7e3aad68fd0b38ba0743223d41))
 
 ### Bug Fixes
 
-- **deps:** update dependency axios to v1.1.3 ([500f02f](https://github.com/foray1010/ignore-sync/commit/500f02f67a1cdce750991109e7674f52a4fb2b65))
-- **deps:** update dependency axios to v1.2.1 ([724e52f](https://github.com/foray1010/ignore-sync/commit/724e52f8d7404ec8d3ba348e184b009f877d13f4))
-- **deps:** update dependency axios to v1.2.2 ([a15d628](https://github.com/foray1010/ignore-sync/commit/a15d628b8fef24a28293c502051bb419db54a9f3))
-- **deps:** update dependency axios to v1.2.3 ([147ad61](https://github.com/foray1010/ignore-sync/commit/147ad6191f5b0a3b1a644333cb8c46f5eae7e1bd))
-- **deps:** update dependency axios to v1.2.5 ([22586b9](https://github.com/foray1010/ignore-sync/commit/22586b9b5c575457a17b4a936c525458aa72016b))
-- **deps:** update dependency axios to v1.2.6 ([fef0e5e](https://github.com/foray1010/ignore-sync/commit/fef0e5eb8dbfdd0e63c4e7cec35175400b072b21))
-- **deps:** update dependency axios to v1.3.2 ([6bca03f](https://github.com/foray1010/ignore-sync/commit/6bca03f1fff6b451047ca255a503733f43daa11d))
-- **deps:** update dependency axios to v1.3.3 ([ff5e0eb](https://github.com/foray1010/ignore-sync/commit/ff5e0eb4e6d1a2b6c2465381426fe4294ea74220))
-- **deps:** update dependency axios to v1.3.4 ([7d2ee92](https://github.com/foray1010/ignore-sync/commit/7d2ee923a159cf30c764568194d041b5bc15cd12))
-- **deps:** update dependency axios to v1.3.5 ([ff834fd](https://github.com/foray1010/ignore-sync/commit/ff834fdda19bfd3ee8694baf4bcdaf508bea0855))
-- **deps:** update dependency axios to v1.3.6 ([b1c4451](https://github.com/foray1010/ignore-sync/commit/b1c4451496b5263a53eaac53f26db9cd02fc96ed))
-- **deps:** update dependency axios to v1.4.0 ([ab2e672](https://github.com/foray1010/ignore-sync/commit/ab2e67221d428ce8fff36da72b03620f68400de8))
-- **deps:** update dependency ramda to ^0.29.0 ([c67f6d1](https://github.com/foray1010/ignore-sync/commit/c67f6d1cd874383e56f6fe759defeeaa3ece0aae))
 - support repository with dot or hyphen ([a731938](https://github.com/foray1010/ignore-sync/commit/a731938696d2bc1c7de92262015db6ab6b08167c))
-
-- drop nodejs 14.17 and 18.11 ([3db126f](https://github.com/foray1010/ignore-sync/commit/3db126f9f8d72d7e3aad68fd0b38ba0743223d41))
-- require node `^16.14.0 || >=18.12.0` ([a09d957](https://github.com/foray1010/ignore-sync/commit/a09d957650e56bdfcf651192525eb5b5b5645706))
 
 ### [6.0.2](https://github.com/foray1010/ignore-sync/compare/v6.0.1...v6.0.2) (2022-10-08)
 
