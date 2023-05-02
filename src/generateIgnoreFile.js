@@ -12,7 +12,7 @@ import highlightComments from './utils/highlightComments.js'
 import joinLinesWithEOF from './utils/joinLinesWithEOF.js'
 import { dynamicComposeP, promiseMap } from './utils/ramdaHelper.js'
 
-const isGithubSource = R.test(/^(\w+\/\w+)$/i)
+const isGithubSource = R.test(/^([\w.-]+\/[\w.-]+)$/i)
 const prependAlert = R.concat([highlightComments(COMMENT_HEADER_ALERT), ''])
 const sourceIs = (...args) => R.compose(...args, R.prop('source'))
 
