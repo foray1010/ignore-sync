@@ -2143,7 +2143,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:1.4.0":
+"axios@npm:^1.4.0":
   version: 1.4.0
   resolution: "axios@npm:1.4.0"
   dependencies:
@@ -4689,7 +4689,7 @@ __metadata:
     "@foray1010/jest-preset": 4.0.0
     "@foray1010/prettier-config": 9.0.0
     "@foray1010/remark-preset": 9.0.0
-    axios: 1.4.0
+    axios: ^1.4.0
     cross-env: 7.0.3
     eslint: 8.39.0
     fast-glob: ^3.2.12
