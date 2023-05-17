@@ -12,16 +12,17 @@ import highlightComments from './utils/highlightComments.js'
 import joinLinesWithEOF from './utils/joinLinesWithEOF.js'
 import { dynamicComposeP, promiseMap } from './utils/ramdaHelper.js'
 
-const isGithubSource = R.test(/^([\w.-]+\/[\w.-]+)$/i)
+const githubSourceRegex = /^([\w.-]+)\/([\w.-]+)(?:#(.+))?$/i
+
 const prependAlert = R.concat([highlightComments(COMMENT_HEADER_ALERT), ''])
 const sourceIs = (...args) => R.compose(...args, R.prop('source'))
 
 const inlineSourceFetcher = R.compose(joinLinesWithEOF, R.prop('data'))
 const githubSourceFetcher = async (block) => {
-  const [owner, repo] = block.source.split('/')
+  const [, owner, repo, ref] = block.source.match(githubSourceRegex)
   const files = await Promise.all(
     block.data.map((relativeFilePath) => {
-      return getGitHubContentFile({ owner, repo, path: relativeFilePath })
+      return getGitHubContentFile({ owner, repo, ref, path: relativeFilePath })
     }),
   )
   return joinLinesWithEOF(files)
@@ -82,7 +83,7 @@ const generateIgnoreFile = (
         sourceIs(R.equals('relative')),
         (block) => relativeSourceFetcher(block, directory),
       ],
-      [sourceIs(isGithubSource), githubSourceFetcher],
+      [sourceIs(R.test(githubSourceRegex)), githubSourceFetcher],
       [
         R.T,
         (block) => {
