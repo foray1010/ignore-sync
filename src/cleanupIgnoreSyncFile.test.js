@@ -14,6 +14,16 @@ describe('cleanupIgnoreSyncFile', () => {
     expect(cleanupIgnoreSyncFile('pattern   #')).toBe('pattern')
   })
 
+  test('should not remove comments inside source tags', () => {
+    expect(cleanupIgnoreSyncFile('[owner/repo#ref]')).toBe('[owner/repo#ref]')
+    expect(cleanupIgnoreSyncFile('[owner/repo#ref] # comment')).toBe(
+      '[owner/repo#ref]',
+    )
+    expect(cleanupIgnoreSyncFile('[owner/repo#ref]   ')).toBe(
+      '[owner/repo#ref]',
+    )
+  })
+
   test('should remove empty lines', () => {
     expect(cleanupIgnoreSyncFile('\n\n\npat\n\n\ntern\n\n\n')).toBe('pat\ntern')
   })

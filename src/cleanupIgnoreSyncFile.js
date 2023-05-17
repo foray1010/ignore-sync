@@ -3,9 +3,10 @@ import * as R from 'ramda'
 import { COMMENT_CHAR, LINE_BREAK } from './constants.js'
 
 const removeEmptyLines = R.reject((line) => line === '')
-const removeTrailingSpacesAndComment = R.replace(
-  new RegExp(`\\s*(${COMMENT_CHAR}.*)?$`),
-  '',
+const removeTrailingSpacesAndComment = R.ifElse(
+  R.test(/^\[(.*)\]/),
+  R.replace(new RegExp(`].*$`), ']'),
+  R.replace(new RegExp(`\\s*(${COMMENT_CHAR}.*)?$`), ''),
 )
 
 const cleanupIgnoreSyncFile = R.compose(
