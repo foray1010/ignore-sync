@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [7.0.1](https://github.com/foray1010/ignore-sync/compare/v7.0.0...v7.0.1) (2023-05-17)
+
+### Bug Fixes
+
+- use default branch instead of master ([993b749](https://github.com/foray1010/ignore-sync/commit/993b7495098d37ac9ab56506853b5948c9f7a9dc))
+
 ## [7.0.0](https://github.com/foray1010/ignore-sync/compare/v6.0.2...v7.0.0) (2023-05-02)
 
 ### ⚠ BREAKING CHANGES
