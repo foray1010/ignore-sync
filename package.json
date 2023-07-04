@@ -60,7 +60,7 @@
     "prettier": "2.8.8",
     "remark-cli": "11.0.0"
   },
-  "packageManager": "yarn@3.6.0",
+  "packageManager": "yarn@3.6.1",
   "engines": {
     "node": "^16.14.0 || >=18.12.0"
   }
