@@ -42,7 +42,7 @@
     "ramda": "^0.29.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "17.7.1",
+    "@commitlint/cli": "17.7.2",
     "@commitlint/config-conventional": "17.7.0",
     "@foray1010/eslint-config": "11.0.3",
     "@foray1010/jest-preset": "4.0.0",
