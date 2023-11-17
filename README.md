@@ -88,7 +88,7 @@ corepack enable
 
    - `[$username/$repo#$ref]`
      - the content of these github files will be downloaded and appended to generated ignore file
-     - recommend using ignore patterns from [[github/gitignore]](https://github.com/github/gitignore)
+     - recommend using ignore patterns from [\[github/gitignore\]](https://github.com/github/gitignore)
      - `$ref` is optional, default to the default branch
 
 1. `npm run ignore-sync`

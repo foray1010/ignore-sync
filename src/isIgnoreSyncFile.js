@@ -1,6 +1,6 @@
 import path from 'node:path'
 
-import * as R from 'ramda'
-
-const isIgnoreSyncFile = R.compose(R.test(/.+ignore-sync$/), path.basename)
+const isIgnoreSyncFile = (filePath) => {
+  return /.+ignore-sync$/u.test(path.basename(filePath))
+}
 export default isIgnoreSyncFile
