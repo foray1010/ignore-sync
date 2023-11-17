@@ -9,11 +9,12 @@ const decodeIgnoreSyncFile = (ignoreSyncFile) => {
   const normalizedIgnoreSyncFile = cleanupIgnoreSyncFile(ignoreSyncFile)
 
   return normalizedIgnoreSyncFile.split(LINE_BREAK).reduce((blocks, line) => {
-    if (/^\[(.*)\]$/.test(line)) {
+    const sourceMatch = /^\[(.*)\]$/u.exec(line)
+    if (sourceMatch) {
       return [
         ...blocks,
         {
-          source: RegExp.$1,
+          source: sourceMatch[1],
           data: [],
         },
       ]

@@ -15,9 +15,13 @@ describe('joinLinesWithEOF', () => {
     expect(joinLinesWithEOF(['a\n\n', 'b\n\n'])).toBe('a\n\n\nb\n')
   })
 
-  test('should keep \\r\\n in the end of file for ignoring mac icon\\r\\n', () => {
-    expect(joinLinesWithEOF(['a\r\n'])).toBe('a\r\n')
-  })
+  test(
+    // eslint-disable-next-line jest/valid-title
+    String.raw`should keep \r\n in the end of file for ignoring mac icon\r\n`,
+    () => {
+      expect(joinLinesWithEOF(['a\r\n'])).toBe('a\r\n')
+    },
+  )
 
   test('should accept empty array', () => {
     expect(joinLinesWithEOF([])).toBe('\n')
