@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.0.0](https://github.com/foray1010/ignore-sync/compare/v7.0.1...v8.0.0) (2024-12-20)
+
+### ⚠ BREAKING CHANGES
+
+- require node `^18.12.0 || >=20.9.0`
+
+### Bug Fixes
+
+- **deps:** update dependency axios to v1.5.1 ([524eac8](https://github.com/foray1010/ignore-sync/commit/524eac8d6966b5d778ccf539820406717e9ab4e6))
+- **deps:** update dependency fast-glob to v3.3.1 ([a78abe2](https://github.com/foray1010/ignore-sync/commit/a78abe207f0be169841a3e40965deb88d50c4e8c))
+- **deps:** update dependency ramda to v0.29.1 ([406abca](https://github.com/foray1010/ignore-sync/commit/406abca97c5c4f4103d122b5b7768d963a2b424c))
+- ensure postinstall always succeeds ([ea27ed4](https://github.com/foray1010/ignore-sync/commit/ea27ed459d1cca69812f5a8b8155b9a3d2467c13))
+
+- require node `^18.12.0 || >=20.9.0` ([04db7c9](https://github.com/foray1010/ignore-sync/commit/04db7c9d504f4a2507c8aacec292eff32851408c))
+
 ### [7.0.1](https://github.com/foray1010/ignore-sync/compare/v7.0.0...v7.0.1) (2023-05-17)
 
 ### Bug Fixes
