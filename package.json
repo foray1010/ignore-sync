@@ -38,7 +38,7 @@
   "dependencies": {
     "axios": "^1.6.2",
     "fast-glob": "^3.3.2",
-    "ignore": "^5.3.0",
+    "ignore": "^6.0.0",
     "ramda": "^0.30.0"
   },
   "devDependencies": {

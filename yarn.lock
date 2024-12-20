@@ -4841,7 +4841,7 @@ __metadata:
     fast-glob: "npm:^3.3.2"
     glob-exec: "npm:0.1.1"
     husky: "npm:9.1.7"
-    ignore: "npm:^5.3.0"
+    ignore: "npm:^6.0.0"
     jest: "npm:29.7.0"
     lint-staged: "npm:15.2.11"
     mermaid.cli: "npm:0.5.1"
@@ -4855,7 +4855,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"ignore@npm:^5.2.0, ignore@npm:^5.2.4, ignore@npm:^5.3.0, ignore@npm:^5.3.1, ignore@npm:^5.3.2":
+"ignore@npm:^5.2.0, ignore@npm:^5.2.4, ignore@npm:^5.3.1, ignore@npm:^5.3.2":
   version: 5.3.2
   resolution: "ignore@npm:5.3.2"
   checksum: 10c0/f9f652c957983634ded1e7f02da3b559a0d4cc210fca3792cb67f1b153623c9c42efdc1c4121af171e295444459fc4a9201101fb041b1104a3c000bccb188337
