@@ -4,7 +4,7 @@ a cli tool to build and sync \*ignore files across files and repositories
 
 ## Why
 
-1. Github default `.gitignore` doesn't cover all our needs, we always need to compose and manage multiple `.gitignore` files from github, such as [Node.gitignore](https://github.com/github/gitignore/blob/master/Node.gitignore) + [macOS.gitignore](https://github.com/github/gitignore/blob/master/Global/macOS.gitignore), in order to remove all the noises in our development. It should be automated.
+1. Github default `.gitignore` doesn't cover all our needs, we always need to compose and manage multiple `.gitignore` files from github, such as [Node.gitignore](https://github.com/github/gitignore/blob/main/Node.gitignore) + [macOS.gitignore](https://github.com/github/gitignore/blob/main/Global/macOS.gitignore), in order to remove all the noises in our development. It should be automated.
 
 1. For library developer, we often need to compose a `.npmignore` from `.gitignore` and some extra ignore patterns that we do not wish to ignore by `.gitignore`, such as test files and `.*rc` files. If `.gitignore` is updated, you will need to update corresponding part of `.npmignore` manually. We should avoid this repetitive work.
 
