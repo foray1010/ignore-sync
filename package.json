@@ -57,7 +57,7 @@
     "mermaid.cli": "0.5.1",
     "node-notifier": "10.0.1",
     "pinst": "3.0.0",
-    "prettier": "3.5.3",
+    "prettier": "3.6.0",
     "remark-cli": "12.0.1"
   },
   "packageManager": "yarn@4.9.2",
