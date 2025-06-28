@@ -4612,7 +4612,7 @@ __metadata:
     node-notifier: "npm:10.0.1"
     pinst: "npm:3.0.0"
     prettier: "npm:3.6.0"
-    ramda: "npm:^0.30.0"
+    ramda: "npm:^0.31.0"
     remark-cli: "npm:12.0.1"
   bin:
     ignore-sync: src/bin.js
@@ -7573,10 +7573,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ramda@npm:^0.30.0":
-  version: 0.30.1
-  resolution: "ramda@npm:0.30.1"
-  checksum: 10c0/3ea3e35c80e1a1b78c23de0c72d3382c3446f42052b113b851f1b7fc421e33a45ce92e7aef3c705cc6de3812a209d03417af5c264f67126cda539fd66c8bea71
+"ramda@npm:^0.31.0":
+  version: 0.31.3
+  resolution: "ramda@npm:0.31.3"
+  checksum: 10c0/a4328521e990df2a8fed7b73b2ca1d6bd611e3af0e512dd23142b5f4e5124778d75573cad7742479007dacb8b0204c386b21a0542e0a35aee5097bb27f48bff1
   languageName: node
   linkType: hard
 
