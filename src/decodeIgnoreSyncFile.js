@@ -9,6 +9,8 @@ const decodeIgnoreSyncFile = (ignoreSyncFile) => {
   const normalizedIgnoreSyncFile = cleanupIgnoreSyncFile(ignoreSyncFile)
 
   return normalizedIgnoreSyncFile.split(LINE_BREAK).reduce((blocks, line) => {
+    if (!line) return blocks
+
     const sourceMatch = /^\[(.*)\]$/u.exec(line)
     if (sourceMatch) {
       return [
