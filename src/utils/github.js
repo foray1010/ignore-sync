@@ -18,8 +18,9 @@ export const getGitHubContentFile = async ({
   path,
 }) => {
   ref = ref ?? (await getDefaultBranch({ owner, repo }))
+  const encodedPath = path.split('/').map(encodeURIComponent).join('/')
   const { data: file } = await axios.get(
-    `https://raw.githubusercontent.com/${owner}/${repo}/${ref}/${path}`,
+    `https://raw.githubusercontent.com/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}/${encodeURIComponent(ref)}/${encodedPath}`,
   )
   return file
 }
